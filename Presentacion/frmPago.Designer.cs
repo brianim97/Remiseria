@@ -68,6 +68,8 @@
             this.X = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMovil = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -174,13 +176,14 @@
             // 
             // lblChofer
             // 
-            this.lblChofer.AutoSize = true;
+            this.lblChofer.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChofer.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblChofer.Location = new System.Drawing.Point(105, 122);
+            this.lblChofer.Location = new System.Drawing.Point(79, 122);
             this.lblChofer.Name = "lblChofer";
-            this.lblChofer.Size = new System.Drawing.Size(47, 16);
+            this.lblChofer.Size = new System.Drawing.Size(197, 20);
             this.lblChofer.TabIndex = 8;
             this.lblChofer.Text = "Chofer";
+            this.lblChofer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtMonto
             // 
@@ -316,6 +319,8 @@
             this.cbTipoBusqueda.Items.AddRange(new object[] {
             "",
             "Mes+Dias+Año",
+            "Movil+Mes+Año",
+            "Movil+Mes+Dias+Año",
             "Nombre+Mes+Año",
             "Nombre+Mes+Dias+Año"});
             this.cbTipoBusqueda.Location = new System.Drawing.Point(43, 29);
@@ -337,6 +342,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.txtMovil);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.cbAnio);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.cbBuscarMes);
@@ -347,9 +354,9 @@
             this.panel2.Controls.Add(this.cbDiaInicio);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label);
-            this.panel2.Location = new System.Drawing.Point(363, 29);
+            this.panel2.Location = new System.Drawing.Point(349, 17);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 117);
+            this.panel2.Size = new System.Drawing.Size(300, 141);
             this.panel2.TabIndex = 16;
             // 
             // cbAnio
@@ -381,7 +388,7 @@
             "2038",
             "2039",
             "2040"});
-            this.cbAnio.Location = new System.Drawing.Point(195, 43);
+            this.cbAnio.Location = new System.Drawing.Point(197, 75);
             this.cbAnio.Name = "cbAnio";
             this.cbAnio.Size = new System.Drawing.Size(75, 27);
             this.cbAnio.TabIndex = 16;
@@ -391,7 +398,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(162, 47);
+            this.label1.Location = new System.Drawing.Point(164, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 19);
             this.label1.TabIndex = 15;
@@ -415,7 +422,7 @@
             "10",
             "11",
             "12"});
-            this.cbBuscarMes.Location = new System.Drawing.Point(85, 40);
+            this.cbBuscarMes.Location = new System.Drawing.Point(87, 72);
             this.cbBuscarMes.Name = "cbBuscarMes";
             this.cbBuscarMes.Size = new System.Drawing.Size(44, 27);
             this.cbBuscarMes.TabIndex = 5;
@@ -425,7 +432,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 44);
+            this.label3.Location = new System.Drawing.Point(54, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 19);
             this.label3.TabIndex = 2;
@@ -468,7 +475,7 @@
             "29",
             "30",
             "31"});
-            this.cbDiaFin.Location = new System.Drawing.Point(226, 76);
+            this.cbDiaFin.Location = new System.Drawing.Point(228, 108);
             this.cbDiaFin.Name = "cbDiaFin";
             this.cbDiaFin.Size = new System.Drawing.Size(44, 27);
             this.cbDiaFin.TabIndex = 14;
@@ -478,7 +485,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(173, 79);
+            this.label2.Location = new System.Drawing.Point(175, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.TabIndex = 13;
@@ -488,11 +495,10 @@
             // 
             this.txtBuscarNomA.BackColor = System.Drawing.Color.White;
             this.txtBuscarNomA.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarNomA.Location = new System.Drawing.Point(130, 6);
+            this.txtBuscarNomA.Location = new System.Drawing.Point(132, 38);
             this.txtBuscarNomA.Name = "txtBuscarNomA";
             this.txtBuscarNomA.Size = new System.Drawing.Size(158, 26);
             this.txtBuscarNomA.TabIndex = 4;
-            this.txtBuscarNomA.TextChanged += new System.EventHandler(this.txtBuscarNomA_TextChanged);
             // 
             // cbDiaInicio
             // 
@@ -531,7 +537,7 @@
             "29",
             "30",
             "31"});
-            this.cbDiaInicio.Location = new System.Drawing.Point(85, 73);
+            this.cbDiaInicio.Location = new System.Drawing.Point(87, 105);
             this.cbDiaInicio.Name = "cbDiaInicio";
             this.cbDiaInicio.Size = new System.Drawing.Size(44, 27);
             this.cbDiaInicio.TabIndex = 12;
@@ -541,7 +547,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 9);
+            this.label5.Location = new System.Drawing.Point(10, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 3;
@@ -551,7 +557,7 @@
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(18, 76);
+            this.label.Location = new System.Drawing.Point(20, 108);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(71, 19);
             this.label.TabIndex = 11;
@@ -666,6 +672,25 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(85, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 19);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Movil";
+            // 
+            // txtMovil
+            // 
+            this.txtMovil.BackColor = System.Drawing.Color.White;
+            this.txtMovil.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMovil.Location = new System.Drawing.Point(132, 6);
+            this.txtMovil.Name = "txtMovil";
+            this.txtMovil.Size = new System.Drawing.Size(62, 26);
+            this.txtMovil.TabIndex = 18;
+            // 
             // frmPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,5 +760,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblChofer;
+        private System.Windows.Forms.TextBox txtMovil;
+        private System.Windows.Forms.Label label9;
     }
 }

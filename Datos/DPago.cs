@@ -188,7 +188,7 @@ namespace Datos
                 conector.Open();
 
 
-                string sql = "SELECT idPago as N°Pago,Chofer.Movil, Chofer.NombreApellido, Chofer.Dni, Chofer.MarcaModelo as Vehiculo, Chofer.Patente, Pago.Dia, Pago.Mes, Pago.Anio, Pago.Hora ,Pago.Monto  FROM Pago INNER JOIN Chofer ON Pago.idChofer = Chofer.idChofer WHERE  Chofer.NombreApellido LIKE @nombreapellido AND Pago.Mes LIKE @mes  AND Pago.Dia >= @diainicio AND Pago.Dia <= @diafin AND Pago.Anio LIKE @anio";
+                string sql = "SELECT idPago as N°Pago,Chofer.Movil, Chofer.NombreApellido, Chofer.Dni, Chofer.MarcaModelo as Vehiculo, Chofer.Patente, Pago.Dia, Pago.Mes, Pago.Anio, Pago.Hora ,Pago.Monto  FROM Pago INNER JOIN Chofer ON Pago.idChofer = Chofer.idChofer WHERE  Chofer.NombreApellido LIKE @nombreapellido AND Pago.Mes LIKE @mes  AND Pago.Dia >= cast(@diainicio as int) AND Pago.Dia <= cast(@diafin as int) AND Pago.Anio LIKE @anio";
                 SQLiteCommand cmd = new SQLiteCommand(sql, conector);
                 cmd.Parameters.Add(new SQLiteParameter("@nombreapellido", "%" + nombreapellido + "%"));
                 cmd.Parameters.Add(new SQLiteParameter("@mes",   mes ));
@@ -215,7 +215,7 @@ namespace Datos
                 conector.Open();
 
 
-                string sql = "SELECT idPago as N°Pago,Chofer.Movil, Chofer.NombreApellido, Chofer.Dni, Chofer.MarcaModelo as Vehiculo, Chofer.Patente, Pago.Dia, Pago.Mes, Pago.Anio, Pago.Hora ,Pago.Monto  FROM Pago INNER JOIN Chofer ON Pago.idChofer = Chofer.idChofer WHERE   Pago.Mes LIKE @mes  AND Pago.Dia >= @diainicio AND Pago.Dia <= @diafin AND Pago.Anio LIKE @anio";
+                string sql = "SELECT idPago as N°Pago,Chofer.Movil, Chofer.NombreApellido, Chofer.Dni, Chofer.MarcaModelo as Vehiculo, Chofer.Patente, Pago.Dia, Pago.Mes, Pago.Anio, Pago.Hora ,Pago.Monto  FROM Pago INNER JOIN Chofer ON Pago.idChofer = Chofer.idChofer WHERE   Pago.Mes LIKE @mes  AND Pago.Dia >=cast(@diainicio as int) AND Pago.Dia <= cast(@diafin as int) AND Pago.Anio LIKE @anio";
                 SQLiteCommand cmd = new SQLiteCommand(sql, conector);
                 cmd.Parameters.Add(new SQLiteParameter("@mes", mes));
                 cmd.Parameters.Add(new SQLiteParameter("@diainicio", DiaInicio));
@@ -232,6 +232,60 @@ namespace Datos
                 Console.WriteLine(ex.Message);
             }
         }
+
+        public void BuscarPorMovilDiasMesAnio(DataGridView dgb, string movil, string mes, string DiaInicio, string DiaFin, string anio)
+        {
+            SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
+            try
+            {
+                conector.Open();
+
+
+                string sql = "SELECT idPago as N°Pago,Chofer.Movil, Chofer.NombreApellido, Chofer.Dni, Chofer.MarcaModelo as Vehiculo, Chofer.Patente, Pago.Dia, Pago.Mes, Pago.Anio, Pago.Hora ,Pago.Monto  FROM Pago INNER JOIN Chofer ON Pago.idChofer = Chofer.idChofer WHERE  Chofer.Movil LIKE @movil AND Pago.Mes LIKE @mes  AND Pago.Dia >= cast(@diainicio as int) AND Pago.Dia <= cast(@diafin as int) AND Pago.Anio LIKE @anio";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conector);
+                cmd.Parameters.Add(new SQLiteParameter("@movil", "%" + movil + "%"));
+                cmd.Parameters.Add(new SQLiteParameter("@mes", mes));
+                cmd.Parameters.Add(new SQLiteParameter("@diainicio", DiaInicio));
+                cmd.Parameters.Add(new SQLiteParameter("@diafin", DiaFin));
+                cmd.Parameters.Add(new SQLiteParameter("@anio", anio));
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+                DataTable dtRes = new DataTable();
+                da.Fill(dtRes);
+                dgb.DataSource = dtRes;
+                conector.Close();
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void BuscarPorMovilMesAnio(DataGridView dgb, string movil, string mes, string anio)
+        {
+            SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
+            try
+            {
+                conector.Open();
+
+
+                string sql = "SELECT idPago as N°Pago,Chofer.Movil, Chofer.NombreApellido, Chofer.Dni, Chofer.MarcaModelo as Vehiculo, Chofer.Patente, Pago.Dia, Pago.Mes, Pago.Anio, Pago.Hora ,Pago.Monto  FROM Pago INNER JOIN Chofer ON Pago.idChofer = Chofer.idChofer WHERE  Chofer.Movil LIKE ?  AND Pago.Mes LIKE ? AND Pago.Anio LIKE ? ";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conector);
+                cmd.Parameters.Add(new SQLiteParameter("Movil", "%" + movil + "%"));
+                cmd.Parameters.Add(new SQLiteParameter("Mes", mes));
+                cmd.Parameters.Add(new SQLiteParameter("Anio", anio));
+                SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+                DataTable dtRes = new DataTable();
+                da.Fill(dtRes);
+                dgb.DataSource = dtRes;
+                conector.Close();
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+
 
 
     }

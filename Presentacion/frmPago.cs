@@ -36,6 +36,15 @@ namespace Presentacion
         public static string MINombre;
         public static string miid;
 
+        public void HabilitarCriteriosDeBusqueda(bool nombre = false, bool mes = false, bool ano = false,bool dia = false, bool movil = false){
+            txtBuscarNomA.Enabled = nombre;
+            cbBuscarMes.Enabled = mes;
+            cbAnio.Enabled = ano;
+            cbDiaInicio.Enabled = dia;
+            cbDiaFin.Enabled = dia;
+            txtMovil.Enabled = movil;
+        }
+
         private void SumarColumnas()
         {
             float sumatoria = 0f;
@@ -62,16 +71,14 @@ namespace Presentacion
             txtMonto.Enabled = value;
             btnGuardar.Enabled = value;
         }
-        private void OcultarColumnas()
+        private void OcultarColumnaId()
         {
             this.dgvPagos.Columns[0].Visible = false;
         }
-
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
@@ -88,8 +95,9 @@ namespace Presentacion
 
         private void frmPago_Load(object sender, EventArgs e)
         {
+            HabilitarCriteriosDeBusqueda();
             BloquearCampos(false);
-            Mostrar();
+            MostrarTodosLosPagos();
             btnImprimir.Enabled = false;
             txtBuscarNomA.Enabled = false;
         }
@@ -108,7 +116,7 @@ namespace Presentacion
                     NPago.Insertar(dtpFechaPago.Value.Day.ToString(), dtpFechaPago.Value.Month.ToString(),dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString(), Convert.ToInt32(miid), Convert.ToDouble(txtMonto.Text));
                    // GuardarDatosImpresion(dtpFechaPago.Value.Day.ToString()+"/"+dtpFechaPago.Value.Month.ToString() + "/" + dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString());
                     MessageBox.Show("Datos Ingresados Correctamente");
-                    Mostrar();
+                    MostrarTodosLosPagos();
                     btnNuevo.Enabled = true;
                    
                     BloquearCampos(false);
@@ -126,11 +134,11 @@ namespace Presentacion
         }
 
         
-        private void Mostrar()
+        private void MostrarTodosLosPagos()
         {
             NPago.Mostrar(dgvPagos);
             chkEliminar.Checked = false;
-            OcultarColumnas();
+            OcultarColumnaId();
             lblTotal.Text = "REGISTROS: " + dgvPagos.Rows.Count.ToString();
             SumarColumnas();
         }
@@ -191,7 +199,7 @@ namespace Presentacion
                 }
                 chkEliminar.Checked = false;
 
-                this.Mostrar();
+                this.MostrarTodosLosPagos();
             }
 
             catch (Exception ex)
@@ -288,37 +296,13 @@ namespace Presentacion
             
         }
 
-        private void txtBuscarNomA_TextChanged(object sender, EventArgs e)
-        {
-            // if(txtBuscarNomA.Text == string.Empty)
-            //{
-            //    Mostrar();
-            //}else if(cbBuscarMes.Text != string.Empty)
-
-            //     {
-            //        if (cbDiaInicio.Text != string.Empty && cbDiaFin.Text != string.Empty)
-            //        {
-            //            NPago.BuscarPorNombreDiasyMes(dgvPagos, txtBuscarNomA.Text, cbBuscarMes.Text, cbDiaInicio.Text, cbDiaFin.Text);
-            //            chkEliminar.Checked = false;
-            //            OcultarColumnas();
-            //        }
-            //        else
-            //        {
-            //            NPago.BuscarNombreyMes(dgvPagos, txtBuscarNomA.Text, cbBuscarMes.Text);
-            //            chkEliminar.Checked = false;
-            //            OcultarColumnas();
-            //        }
-            //    }
-            //lblTotal.Text = "REGISTROS: " + dgvPagos.Rows.Count.ToString();
-            //SumarColumnas();
-
-        }
+       
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             cbBuscarMes.Text = string.Empty;
             txtBuscarNomA.Text = string.Empty;
-            Mostrar();
+            MostrarTodosLosPagos();
            
         }
 
@@ -353,28 +337,34 @@ namespace Presentacion
 
             if (cbTipoBusqueda.Text == string.Empty)
             {
-                Mostrar();
+                MostrarTodosLosPagos();
+                HabilitarCriteriosDeBusqueda();
             }
             else if (cbTipoBusqueda.Text == "Mes+Dias+Año")
             {
-                txtBuscarNomA.Enabled = false;
-                
+                HabilitarCriteriosDeBusqueda(dia:true, mes:true, ano:true);
+
             }
             else if (cbTipoBusqueda.Text == "Nombre+Mes+Dias+Año")
             {
-                txtBuscarNomA.Enabled = true;
-                cbDiaInicio.Enabled = true;
-                cbDiaFin.Enabled = true;
-                
-                
+                HabilitarCriteriosDeBusqueda(nombre:true, dia: true, mes: true, ano: true);
+
+
             }
             else if (cbTipoBusqueda.Text == "Nombre+Mes+Año")
             {
-                txtBuscarNomA.Enabled = true;
-                cbDiaInicio.Enabled = false;
-                cbDiaFin.Enabled = false;
-                
+                HabilitarCriteriosDeBusqueda(nombre: true, mes: true, ano: true);
+
             }
+            else if (cbTipoBusqueda.Text == "Movil+Mes+Año")
+            {
+                HabilitarCriteriosDeBusqueda(movil: true, mes: true, ano: true);
+            }
+            else if (cbTipoBusqueda.Text == "Movil+Mes+Dias+Año")
+            {
+                HabilitarCriteriosDeBusqueda(movil: true, mes: true,dia: true, ano: true);
+            }
+
             lblTotal.Text = "REGISTROS: " + dgvPagos.Rows.Count.ToString();
             SumarColumnas();
         }
@@ -396,6 +386,18 @@ namespace Presentacion
                 {
                    
                     NPago.BuscarNombreyMesAnio(dgvPagos, txtBuscarNomA.Text, cbBuscarMes.Text, cbAnio.Text);
+                }
+                else if (cbTipoBusqueda.Text == "Movil+Mes+Año")
+                {
+
+
+                    NPago.BuscarMovilMesAnio(dgvPagos, txtMovil.Text, cbBuscarMes.Text, cbAnio.Text);
+                }
+                else if (cbTipoBusqueda.Text == "Movil+Mes+Dias+Año")
+                {
+
+
+                    NPago.BuscarPorMovilDiasMesAnio(dgvPagos, txtMovil.Text, cbBuscarMes.Text, cbDiaInicio.Text, cbDiaFin.Text, cbAnio.Text);
                 }
                 lblTotal.Text = "REGISTROS: " + dgvPagos.Rows.Count.ToString();
                 SumarColumnas();

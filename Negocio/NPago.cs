@@ -65,6 +65,17 @@ namespace Negocio
             DPago obj = new DPago();
             obj.BuscarPorNombreDiasyMesAnio(dgv, nombre, mes, DiaInicio, DiaFin, anio);
         }
+        public static void BuscarMovilMesAnio(DataGridView dgv, string movil, string mes, string anio)
+        {
+            DPago obj = new DPago();
+            obj.BuscarPorMovilMesAnio(dgv, movil, mes, anio);
+
+        }
+        public static void BuscarPorMovilDiasMesAnio(DataGridView dgv, string movil, string mes, string DiaInicio, string DiaFin, string anio)
+        {
+            DPago obj = new DPago();
+            obj.BuscarPorMovilDiasMesAnio(dgv, movil, mes, DiaInicio, DiaFin, anio);
+        }
 
 
     }
