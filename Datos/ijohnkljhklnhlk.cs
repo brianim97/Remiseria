@@ -8,5 +8,6 @@ namespace Datos
 {
     class ijohnkljhklnhlk
     {
+        public int a;
     }
 }
