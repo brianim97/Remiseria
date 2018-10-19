@@ -70,6 +70,7 @@
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMovil = new System.Windows.Forms.TextBox();
+            this.btnImprimirReportes = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -270,6 +271,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Teal;
+            this.tabPage2.Controls.Add(this.btnImprimirReportes);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.lblMontoTotal);
@@ -584,7 +586,7 @@
             this.btnImprimir.FlatAppearance.BorderSize = 2;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Location = new System.Drawing.Point(132, 176);
+            this.btnImprimir.Location = new System.Drawing.Point(126, 171);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 26);
             this.btnImprimir.TabIndex = 9;
@@ -598,7 +600,7 @@
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(543, 173);
+            this.lblTotal.Location = new System.Drawing.Point(554, 173);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(106, 21);
             this.lblTotal.TabIndex = 8;
@@ -624,7 +626,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 2;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(51, 176);
+            this.btnEliminar.Location = new System.Drawing.Point(45, 171);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 26);
             this.btnEliminar.TabIndex = 6;
@@ -690,6 +692,21 @@
             this.txtMovil.Name = "txtMovil";
             this.txtMovil.Size = new System.Drawing.Size(62, 26);
             this.txtMovil.TabIndex = 18;
+            // 
+            // btnImprimirReportes
+            // 
+            this.btnImprimirReportes.BackColor = System.Drawing.Color.White;
+            this.btnImprimirReportes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnImprimirReportes.FlatAppearance.BorderSize = 2;
+            this.btnImprimirReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirReportes.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirReportes.Location = new System.Drawing.Point(207, 171);
+            this.btnImprimirReportes.Name = "btnImprimirReportes";
+            this.btnImprimirReportes.Size = new System.Drawing.Size(127, 26);
+            this.btnImprimirReportes.TabIndex = 19;
+            this.btnImprimirReportes.Text = "Imprimir Reportes";
+            this.btnImprimirReportes.UseVisualStyleBackColor = false;
+            this.btnImprimirReportes.Click += new System.EventHandler(this.btnImprimirReportes_Click);
             // 
             // frmPago
             // 
@@ -762,5 +779,6 @@
         private System.Windows.Forms.Label lblChofer;
         private System.Windows.Forms.TextBox txtMovil;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnImprimirReportes;
     }
 }

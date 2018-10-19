@@ -35,6 +35,7 @@
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.choferesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.dEUDORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             // 
             this.estrellasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pagosToolStripMenuItem,
+            this.dEUDORESToolStripMenuItem,
             this.choferesToolStripMenuItem});
             this.estrellasToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estrellasToolStripMenuItem.Name = "estrellasToolStripMenuItem";
@@ -71,6 +73,12 @@
             this.choferesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.choferesToolStripMenuItem.Text = "CHOFERES";
             this.choferesToolStripMenuItem.Click += new System.EventHandler(this.choferesToolStripMenuItem_Click);
+            // 
+            // dEUDORESToolStripMenuItem
+            // 
+            this.dEUDORESToolStripMenuItem.Name = "dEUDORESToolStripMenuItem";
+            this.dEUDORESToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.dEUDORESToolStripMenuItem.Text = "DEUDORES";
             // 
             // Entrada
             // 
@@ -101,6 +109,7 @@
         private System.Windows.Forms.ToolStripMenuItem estrellasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem choferesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dEUDORESToolStripMenuItem;
     }
 }
 

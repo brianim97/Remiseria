@@ -413,6 +413,11 @@ namespace Presentacion
         {
             
         }
+
+        private void btnImprimirReportes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     //Nombre+Mes+Año
   //  Nombre+Mes+Dias+Año
