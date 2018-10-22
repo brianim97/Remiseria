@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmAcciones : Form
+    public partial class frmAcciones : Form, ISeleccionarChofer
     {
         public frmAcciones()
         {
             InitializeComponent();
         }
 
+        public void RecuperarId(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            frmSeleccionarChofer frm = new frmSeleccionarChofer();
+            frmSeleccionarChofer frm = new frmSeleccionarChofer(this);
             frm.ShowDialog();
         }
     }

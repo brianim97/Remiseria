@@ -46,7 +46,6 @@
             this.dgvSelChofer.ReadOnly = true;
             this.dgvSelChofer.Size = new System.Drawing.Size(345, 347);
             this.dgvSelChofer.TabIndex = 0;
-            this.dgvSelChofer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSelChofer_CellContentClick);
             this.dgvSelChofer.DoubleClick += new System.EventHandler(this.dgvSelChofer_DoubleClick);
             // 
             // cbTipoBusqueda

@@ -13,8 +13,11 @@ namespace Presentacion
 {
     public partial class frmSeleccionarChofer : Form
     {
-        public frmSeleccionarChofer()
+        public ISeleccionarChofer frmPadre;
+
+        public frmSeleccionarChofer(ISeleccionarChofer frmPadre)
         {
+            this.frmPadre = frmPadre;
             InitializeComponent();
             Mostrar();
         }
@@ -23,12 +26,7 @@ namespace Presentacion
             NChofer.Mostrar(dgvSelChofer);
             //OcultarColumnas();
         }
-        public string MIID;
-        //private void OcultarColumnas()
-        //{
-        //    this.dgvSelChofer.Columns[0].Visible = false;
-        //}
-
+        
         private void frmSeleccionarChofer_Load(object sender, EventArgs e)
         {
 
@@ -71,20 +69,15 @@ namespace Presentacion
 
         private void dgvSelChofer_DoubleClick(object sender, EventArgs e)
         {
-            frmPago frm = new frmPago();
             string idAA, idBB;
             idAA = (this.dgvSelChofer.CurrentRow.Cells["ID"].Value).ToString();
             idBB = (this.dgvSelChofer.CurrentRow.Cells["NombreApellido"].Value).ToString();
-            frmPago.miid = idAA;
+            
+            //frmPago.miid = idAA;
             frmPago.MINombre = idBB;
+            frmPadre.RecuperarId(idAA);
             this.Hide();
-
-
         }
 
-        private void dgvSelChofer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

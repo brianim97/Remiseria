@@ -13,13 +13,12 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmPago : Form
+    public partial class frmPago : Form, ISeleccionarChofer
     {
         public frmPago()
         {
             InitializeComponent();
 
-            
         }
 
         public string IMidpago;
@@ -34,7 +33,7 @@ namespace Presentacion
         public string IMmovil;
 
         public static string MINombre;
-        public static string miid;
+        public string miid;
 
         public void HabilitarCriteriosDeBusqueda(bool nombre = false, bool mes = false, bool ano = false,bool dia = false, bool movil = false){
             txtBuscarNomA.Enabled = nombre;
@@ -112,7 +111,7 @@ namespace Presentacion
             {
                 try
                 {
-                    frmSeleccionarChofer frm = new frmSeleccionarChofer();
+                    frmSeleccionarChofer frm = new frmSeleccionarChofer(this);
                     NPago.Insertar(dtpFechaPago.Value.Day.ToString(), dtpFechaPago.Value.Month.ToString(),dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString(), Convert.ToInt32(miid), Convert.ToDouble(txtMonto.Text));
                    // GuardarDatosImpresion(dtpFechaPago.Value.Day.ToString()+"/"+dtpFechaPago.Value.Month.ToString() + "/" + dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString());
                     MessageBox.Show("Datos Ingresados Correctamente");
@@ -219,7 +218,7 @@ namespace Presentacion
 
         private void btnSelChofer_Click(object sender, EventArgs e)
         {
-            frmSeleccionarChofer frm = new frmSeleccionarChofer();
+            frmSeleccionarChofer frm = new frmSeleccionarChofer(this);
             frm.ShowDialog();
             lblChofer.Text =  MINombre;
         }
@@ -427,6 +426,11 @@ namespace Presentacion
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void RecuperarId(string id)
+        {
+            miid = id;
         }
     }
     //Nombre+Mes+Año
