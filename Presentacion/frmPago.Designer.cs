@@ -44,11 +44,14 @@
             this.btnSelChofer = new System.Windows.Forms.Button();
             this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnImprimirReportes = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cbTipoBusqueda = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtMovil = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.cbAnio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbBuscarMes = new System.Windows.Forms.ComboBox();
@@ -68,9 +71,6 @@
             this.X = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtMovil = new System.Windows.Forms.TextBox();
-            this.btnImprimirReportes = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -185,6 +185,7 @@
             this.lblChofer.TabIndex = 8;
             this.lblChofer.Text = "Chofer";
             this.lblChofer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblChofer.Click += new System.EventHandler(this.lblChofer_Click);
             // 
             // txtMonto
             // 
@@ -248,6 +249,7 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Chofer";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnSelChofer
             // 
@@ -288,6 +290,21 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Registro";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // btnImprimirReportes
+            // 
+            this.btnImprimirReportes.BackColor = System.Drawing.Color.White;
+            this.btnImprimirReportes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnImprimirReportes.FlatAppearance.BorderSize = 2;
+            this.btnImprimirReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirReportes.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirReportes.Location = new System.Drawing.Point(207, 171);
+            this.btnImprimirReportes.Name = "btnImprimirReportes";
+            this.btnImprimirReportes.Size = new System.Drawing.Size(127, 26);
+            this.btnImprimirReportes.TabIndex = 19;
+            this.btnImprimirReportes.Text = "Imprimir Reportes";
+            this.btnImprimirReportes.UseVisualStyleBackColor = false;
+            this.btnImprimirReportes.Click += new System.EventHandler(this.btnImprimirReportes_Click);
             // 
             // panel3
             // 
@@ -360,6 +377,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 141);
             this.panel2.TabIndex = 16;
+            // 
+            // txtMovil
+            // 
+            this.txtMovil.BackColor = System.Drawing.Color.White;
+            this.txtMovil.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMovil.Location = new System.Drawing.Point(132, 6);
+            this.txtMovil.Name = "txtMovil";
+            this.txtMovil.Size = new System.Drawing.Size(62, 26);
+            this.txtMovil.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(85, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 19);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Movil";
             // 
             // cbAnio
             // 
@@ -673,40 +709,6 @@
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(85, 6);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 19);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Movil";
-            // 
-            // txtMovil
-            // 
-            this.txtMovil.BackColor = System.Drawing.Color.White;
-            this.txtMovil.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovil.Location = new System.Drawing.Point(132, 6);
-            this.txtMovil.Name = "txtMovil";
-            this.txtMovil.Size = new System.Drawing.Size(62, 26);
-            this.txtMovil.TabIndex = 18;
-            // 
-            // btnImprimirReportes
-            // 
-            this.btnImprimirReportes.BackColor = System.Drawing.Color.White;
-            this.btnImprimirReportes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnImprimirReportes.FlatAppearance.BorderSize = 2;
-            this.btnImprimirReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirReportes.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirReportes.Location = new System.Drawing.Point(207, 171);
-            this.btnImprimirReportes.Name = "btnImprimirReportes";
-            this.btnImprimirReportes.Size = new System.Drawing.Size(127, 26);
-            this.btnImprimirReportes.TabIndex = 19;
-            this.btnImprimirReportes.Text = "Imprimir Reportes";
-            this.btnImprimirReportes.UseVisualStyleBackColor = false;
-            this.btnImprimirReportes.Click += new System.EventHandler(this.btnImprimirReportes_Click);
             // 
             // frmPago
             // 

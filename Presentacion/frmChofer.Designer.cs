@@ -35,6 +35,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelarChofer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.txtMovil = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -102,8 +104,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -185,6 +186,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.groupBox1.Controls.Add(this.ChkActivo);
             this.groupBox1.Controls.Add(this.label30);
             this.groupBox1.Controls.Add(this.label28);
             this.groupBox1.Controls.Add(this.label29);
@@ -214,6 +216,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chofer";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(272, 361);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(14, 16);
+            this.label30.TabIndex = 28;
+            this.label30.Text = "*";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(231, 257);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(14, 16);
+            this.label28.TabIndex = 27;
+            this.label28.Text = "*";
             // 
             // label29
             // 
@@ -989,25 +1011,17 @@
             this.pictureBox2.TabIndex = 37;
             this.pictureBox2.TabStop = false;
             // 
-            // label28
+            // ChkActivo
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(231, 257);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(14, 16);
-            this.label28.TabIndex = 27;
-            this.label28.Text = "*";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(272, 361);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(14, 16);
-            this.label30.TabIndex = 28;
-            this.label30.Text = "*";
+            this.ChkActivo.AutoSize = true;
+            this.ChkActivo.Checked = true;
+            this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkActivo.Location = new System.Drawing.Point(443, 406);
+            this.ChkActivo.Name = "ChkActivo";
+            this.ChkActivo.Size = new System.Drawing.Size(63, 20);
+            this.ChkActivo.TabIndex = 30;
+            this.ChkActivo.Text = "Activo";
+            this.ChkActivo.UseVisualStyleBackColor = true;
             // 
             // frmChofer
             // 
@@ -1123,5 +1137,6 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.CheckBox ChkActivo;
     }
 }

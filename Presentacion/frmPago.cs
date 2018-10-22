@@ -418,6 +418,16 @@ namespace Presentacion
         {
 
         }
+
+        private void lblChofer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     //Nombre+Mes+Año
   //  Nombre+Mes+Dias+Año

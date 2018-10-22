@@ -126,5 +126,12 @@ namespace Presentacion
         {
 
         }
+
+        private void dEUDORESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDeudores frm = new frmDeudores();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

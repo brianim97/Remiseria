@@ -33,9 +33,9 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.estrellasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dEUDORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.choferesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.dEUDORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,18 +67,19 @@
             this.pagosToolStripMenuItem.Text = "PAGOS";
             this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
+            // dEUDORESToolStripMenuItem
+            // 
+            this.dEUDORESToolStripMenuItem.Name = "dEUDORESToolStripMenuItem";
+            this.dEUDORESToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.dEUDORESToolStripMenuItem.Text = "DEUDORES";
+            this.dEUDORESToolStripMenuItem.Click += new System.EventHandler(this.dEUDORESToolStripMenuItem_Click);
+            // 
             // choferesToolStripMenuItem
             // 
             this.choferesToolStripMenuItem.Name = "choferesToolStripMenuItem";
             this.choferesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.choferesToolStripMenuItem.Text = "CHOFERES";
             this.choferesToolStripMenuItem.Click += new System.EventHandler(this.choferesToolStripMenuItem_Click);
-            // 
-            // dEUDORESToolStripMenuItem
-            // 
-            this.dEUDORESToolStripMenuItem.Name = "dEUDORESToolStripMenuItem";
-            this.dEUDORESToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.dEUDORESToolStripMenuItem.Text = "DEUDORES";
             // 
             // Entrada
             // 
