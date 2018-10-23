@@ -23,7 +23,7 @@ namespace Presentacion
         }
         private void Mostrar()
         {
-            NChofer.Mostrar(dgvSelChofer);
+            dgvSelChofer = NChofer.Mostrar();
             //OcultarColumnas();
         }
         

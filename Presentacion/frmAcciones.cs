@@ -108,9 +108,9 @@ namespace Presentacion
         {
             if (txtValorDeBase.Text != string.Empty && cbMes.Text != string.Empty && cbAno.Text != string.Empty)
             {
-                DataGridView dgvCopia = new DataGridView();
-                Negocio.NChofer.Mostrar(dgvCopia);
-                int cantFilas = dgvCopia.RowCount;
+                DataGridView dgvCopia = Negocio.NChofer.Mostrar();
+
+                int cantFilas = dgvCopia.Rows.Count;
 
                 bool[] SemanasSeleccionadas = new bool[4];
                 SemanasSeleccionadas[0] = chk1.Checked;

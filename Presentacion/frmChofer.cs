@@ -99,7 +99,7 @@ namespace Presentacion
 
         private void Mostrar()
         {
-            NChofer.Mostrar(dgbListado);
+            dgbListado = NChofer.Mostrar();
             OcultarColumnas();
             lblTotal.Text = "REGISTROS: " + dgbListado.Rows.Count.ToString();
         }
