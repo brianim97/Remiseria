@@ -52,7 +52,7 @@ namespace Datos
         public DataTable Mostrar()
         {
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
-            string sql = @"SELECT * FROM Deuda";
+            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer";
             SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conector);
             DataTable dt = new DataTable("Deudores");
             da.Fill(dt);
