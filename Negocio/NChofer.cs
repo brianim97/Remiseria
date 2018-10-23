@@ -59,10 +59,10 @@ namespace Negocio
             obj.IdChofer = id;
             obj.Eliminar(obj);
         }
-        public static void Mostrar(DataGridView dgb)
+        public static DataGridView Mostrar()
         {
             DChofer obj = new DChofer();
-            obj.Mostrar(dgb);
+            return obj.Mostrar();
         }
         public static void BuscarPorNombre(DataGridView dgb, string textobuscar)
         {
