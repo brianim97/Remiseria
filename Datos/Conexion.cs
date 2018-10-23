@@ -11,8 +11,7 @@ namespace Datos
 
     internal static class Conexion
     {
-    public static string strConexion = "Data Source="+Application.StartupPath+"\\remiseria.db;Version = 3";
+        public static string strConexion = "Data Source="+Application.StartupPath+"\\remiseria.db;Version = 3";
     }
-
 }
    

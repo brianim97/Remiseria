@@ -198,7 +198,6 @@ namespace Datos
             da.Fill(dtRes);
             dgb.DataSource = dtRes;
             conector.Close();
-
         }
 
         public void BuscarPorNombre(DataGridView dgb, string textobuscar)

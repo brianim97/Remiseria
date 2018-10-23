@@ -12,6 +12,10 @@ namespace Datos
     {
         public bool Insertar(Entidades.Deuda d)
         {
+            if (Contains(d.IdChofer, d.Fecha.ToString("yyyy-MM-dd")))
+            {
+                return false;
+            }
 
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
             string sql = "INSERT INTO Deuda (idChofer, idPago, Monto, Fecha) " +
@@ -27,15 +31,13 @@ namespace Datos
             cmd.ExecuteNonQuery();
             conector.Close();
             return true;
-
-
         }
 
         public bool Eliminar(int iddeuda)
         {
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
 
-            string sql = "DELET FROM Deuda WHERE idDeuda = @iddeuda";
+            string sql = "DELETE FROM Deuda WHERE idDeuda = @iddeuda";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conector);
             cmd.Parameters.Add(new SQLiteParameter("@iddeuda", iddeuda));
@@ -67,6 +69,24 @@ namespace Datos
             DataTable dt = new DataTable("Deudores");
             da.Fill(dt);
             return dt;
+        }
+
+        public bool Contains(int id, string fecha)
+        {
+
+            SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
+
+            string sql = "Select Exists (Select 1 from Deuda inner join Chofer on Deuda.idChofer = Chofer.idChofer Where Chofer.EsActivo = 1 AND Deuda.Fecha = @fecha And Chofer.idChofer = @idChofer);";
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, conector);
+            cmd.Parameters.Add(new SQLiteParameter("@idChofer", id));
+            cmd.Parameters.Add(new SQLiteParameter("@fecha", fecha));
+
+            conector.Open();
+            int a = (int)cmd.ExecuteScalar();
+            conector.Close();
+
+            return a == 1;
         }
 
     }
