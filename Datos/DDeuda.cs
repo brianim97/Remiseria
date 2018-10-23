@@ -52,7 +52,7 @@ namespace Datos
         public DataTable Mostrar()
         {
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
-            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer";
+            string sql = @"SELECT * FROM Deuda";
             SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conector);
             DataTable dt = new DataTable("Deudores");
             da.Fill(dt);
@@ -83,7 +83,7 @@ namespace Datos
             cmd.Parameters.Add(new SQLiteParameter("@fecha", fecha));
 
             conector.Open();
-            int a = Convert.ToInt32(cmd.ExecuteScalar());
+            int a = (int)cmd.ExecuteScalar();
             conector.Close();
 
             return a == 1;
