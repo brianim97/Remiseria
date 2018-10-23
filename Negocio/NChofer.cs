@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Negocio
 {
@@ -59,11 +60,19 @@ namespace Negocio
             obj.IdChofer = id;
             obj.Eliminar(obj);
         }
+
         public static void Mostrar(DataGridView dgv)
         {
             DChofer obj = new DChofer();
             obj.Mostrar(dgv);
         }
+
+        public DataTable Mostrar2()
+        {
+            DChofer obj = new DChofer();
+            return obj.Mostrar2();
+        }
+
         public static void BuscarPorNombre(DataGridView dgb, string textobuscar)
         {
             DChofer obj = new DChofer();

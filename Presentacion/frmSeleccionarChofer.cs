@@ -24,7 +24,6 @@ namespace Presentacion
         private void Mostrar()
         {
             NChofer.Mostrar(dgvSelChofer);
-            //OcultarColumnas();
         }
         
         private void frmSeleccionarChofer_Load(object sender, EventArgs e)

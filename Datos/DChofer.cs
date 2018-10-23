@@ -189,15 +189,25 @@ namespace Datos
         public void Mostrar(DataGridView dgv)
         {
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
-            conector.Open();
-            DataTable dtRes = new DataTable();
-            String sql = "Select idChofer as ID,Movil,NombreApellido,Dni,FechaNacimiento,NroTelefono,Direccion,EstadoCivil,MarcaModelo,Anio,Patente,NroChasis,NroMotor,FechaIngreso,Propietario,TelPropietario  from Chofer";
 
+            DataTable dtRes = new DataTable();
+            String sql = "Select idChofer,Movil,NombreApellido,Dni,FechaNacimiento,NroTelefono,Direccion,EstadoCivil,MarcaModelo,Anio,Patente,NroChasis,NroMotor,FechaIngreso,Propietario,TelPropietario from Chofer";
 
             SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conector);
             da.Fill(dtRes);
             dgv.DataSource = dtRes;
-            conector.Close();
+        }
+
+        public DataTable Mostrar2()
+        {
+            SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
+
+            DataTable dtRes = new DataTable();
+            String sql = "Select idChofer,Movil,NombreApellido,Dni,FechaNacimiento,NroTelefono,Direccion,EstadoCivil,MarcaModelo,Anio,Patente,NroChasis,NroMotor,FechaIngreso,Propietario,TelPropietario from Chofer";
+
+            SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conector);
+            da.Fill(dtRes);
+            return dtRes;
         }
 
         public void BuscarPorNombre(DataGridView dgb, string textobuscar)

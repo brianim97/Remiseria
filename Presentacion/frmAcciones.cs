@@ -33,44 +33,41 @@ namespace Presentacion
            
         }
 
-       
-        private void CargarTicketsParticular()
+        private void CargarTicketDeuda(string valor, string mes, string ano)
         {
-            if(txtValorDeBase.Text != string.Empty && cbMes.Text != string.Empty && cbAno.Text != string.Empty)
+            if (valor != string.Empty && mes != string.Empty && ano != string.Empty)
             {
-                bool[] SemanasSeleccionadas = new bool[4];
-                SemanasSeleccionadas[0] = chk1.Checked;
-                SemanasSeleccionadas[1] = chk2.Checked;
-                SemanasSeleccionadas[2] = chk3.Checked;
-                SemanasSeleccionadas[3] = chk4.Checked;
+                bool[] SemanasSeleccionadas = new bool[] { chk1.Checked, chk2.Checked, chk3.Checked, chk4.Checked };
 
                 var deuda = new Entidades.Deuda();
                 int nroModificaciones = 0;
-                for (int i = 0; i < 4; i++)
+
+                for (int i = 0; i < SemanasSeleccionadas.Length; i++)
                 {
                     if (SemanasSeleccionadas[i] == false)
                         continue;
+
                     deuda.IdChofer = Convert.ToInt32(miid);
                     deuda.IdPago = null;
                     deuda.Monto = Convert.ToDouble(txtValorDeBase.Text);
                     int semana = i + 1;
-                    //DateTime dt = 
-                    deuda.Fecha = new DateTime(Convert.ToInt32(cbAno.Text), Convert.ToInt32(cbMes.Text), semana);
 
-                    if(new Negocio.NDeuda().Insertar(deuda));
+                    deuda.Fecha = new DateTime(Convert.ToInt32(ano), Convert.ToInt32(mes), semana);
+
+                    if (new Negocio.NDeuda().Insertar(deuda)) ;
                         nroModificaciones++;
                 }
+
                 if (nroModificaciones > 0)
                     MessageBox.Show("Se Generaron " + nroModificaciones + " Tickets Correctamente");
                 else
                     MessageBox.Show("No Hubo Modificaciones. Compruebe los Datos!");
-
             }
         }
 
         private void btnGenTickParticular_Click(object sender, EventArgs e)
         {
-            CargarTicketsParticular();
+            CargarTicketDeuda(txtValorDeBase.Text, cbMes.Text, cbAno.Text);
         }
 
         private void txtValorDeBase_KeyPress(object sender, KeyPressEventArgs e)
@@ -108,9 +105,12 @@ namespace Presentacion
         {
             if (txtValorDeBase.Text != string.Empty && cbMes.Text != string.Empty && cbAno.Text != string.Empty)
             {
-                DataGridView dgvCopia = new DataGridView();
-                Negocio.NChofer.Mostrar(dgvCopia);
-                int cantFilas = dgvCopia.RowCount;
+                //DataGridView dgvCopia = new DataGridView();
+                DataTable t = new Negocio.NChofer().Mostrar2();
+                //dgvCopia.DataSource = t;
+                int cantFilas = t.Rows.Count;
+
+                Console.WriteLine(cantFilas + " filas cargadas");
 
                 bool[] SemanasSeleccionadas = new bool[4];
                 SemanasSeleccionadas[0] = chk1.Checked;
@@ -122,7 +122,8 @@ namespace Presentacion
                 var deuda = new Entidades.Deuda();
                 for (int i = 0; i < cantFilas; i++)
                 {
-                    deuda.IdChofer = (Convert.ToInt32(dgvCopia["idChofer", i].Value));
+                    
+                    deuda.IdChofer = (Convert.ToInt32(t.Rows[i]["idChofer"]));
                     deuda.IdPago = null;
                     deuda.Monto = Convert.ToDouble(txtValorDeBase.Text);
 
@@ -132,8 +133,8 @@ namespace Presentacion
                             continue;
                         int semana = j + 1;
                         deuda.Fecha = new DateTime(Convert.ToInt32(cbAno.Text), Convert.ToInt32(cbMes.Text), semana);
-                        if(new Negocio.NDeuda().Insertar(deuda));
-                        nroModificaciones++;
+                        if(new Negocio.NDeuda().Insertar(deuda))
+                            nroModificaciones++;
                     }
 
                 }
