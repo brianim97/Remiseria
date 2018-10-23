@@ -186,7 +186,7 @@ namespace Datos
 
         }
 
-        public DataGridView Mostrar()
+        public void Mostrar(DataGridView dgv)
         {
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
             conector.Open();
@@ -196,10 +196,8 @@ namespace Datos
 
             SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conector);
             da.Fill(dtRes);
-            DataGridView dgv = new DataGridView();
             dgv.DataSource = dtRes;
             conector.Close();
-            return dgv;
         }
 
         public void BuscarPorNombre(DataGridView dgb, string textobuscar)
