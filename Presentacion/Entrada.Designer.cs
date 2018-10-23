@@ -36,6 +36,7 @@
             this.dEUDORESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.choferesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.aCCIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@
             this.estrellasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pagosToolStripMenuItem,
             this.dEUDORESToolStripMenuItem,
-            this.choferesToolStripMenuItem});
+            this.choferesToolStripMenuItem,
+            this.aCCIONESToolStripMenuItem});
             this.estrellasToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estrellasToolStripMenuItem.Name = "estrellasToolStripMenuItem";
             this.estrellasToolStripMenuItem.Size = new System.Drawing.Size(110, 23);
@@ -80,6 +82,13 @@
             this.choferesToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.choferesToolStripMenuItem.Text = "CHOFERES";
             this.choferesToolStripMenuItem.Click += new System.EventHandler(this.choferesToolStripMenuItem_Click);
+            // 
+            // aCCIONESToolStripMenuItem
+            // 
+            this.aCCIONESToolStripMenuItem.Name = "aCCIONESToolStripMenuItem";
+            this.aCCIONESToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.aCCIONESToolStripMenuItem.Text = "ACCIONES";
+            this.aCCIONESToolStripMenuItem.Click += new System.EventHandler(this.aCCIONESToolStripMenuItem_Click);
             // 
             // Entrada
             // 
@@ -111,6 +120,7 @@
         private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem choferesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dEUDORESToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aCCIONESToolStripMenuItem;
     }
 }
 

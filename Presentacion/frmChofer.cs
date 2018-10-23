@@ -695,7 +695,10 @@ namespace Presentacion
 
         }
 
-        
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

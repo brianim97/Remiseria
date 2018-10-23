@@ -133,5 +133,12 @@ namespace Presentacion
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void aCCIONESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAcciones frm = new frmAcciones();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

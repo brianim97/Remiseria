@@ -35,6 +35,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelarChofer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -104,7 +105,6 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.ChkActivo = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -216,6 +216,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chofer";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // ChkActivo
+            // 
+            this.ChkActivo.AutoSize = true;
+            this.ChkActivo.Checked = true;
+            this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkActivo.Location = new System.Drawing.Point(443, 406);
+            this.ChkActivo.Name = "ChkActivo";
+            this.ChkActivo.Size = new System.Drawing.Size(63, 20);
+            this.ChkActivo.TabIndex = 30;
+            this.ChkActivo.Text = "Activo";
+            this.ChkActivo.UseVisualStyleBackColor = true;
             // 
             // label30
             // 
@@ -393,6 +405,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(150, 24);
             this.txtDni.TabIndex = 6;
+            this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // txtNombreApellido
@@ -1010,18 +1023,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 37;
             this.pictureBox2.TabStop = false;
-            // 
-            // ChkActivo
-            // 
-            this.ChkActivo.AutoSize = true;
-            this.ChkActivo.Checked = true;
-            this.ChkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkActivo.Location = new System.Drawing.Point(443, 406);
-            this.ChkActivo.Name = "ChkActivo";
-            this.ChkActivo.Size = new System.Drawing.Size(63, 20);
-            this.ChkActivo.TabIndex = 30;
-            this.ChkActivo.Text = "Activo";
-            this.ChkActivo.UseVisualStyleBackColor = true;
             // 
             // frmChofer
             // 

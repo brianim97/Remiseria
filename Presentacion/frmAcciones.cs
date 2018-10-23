@@ -17,15 +17,67 @@ namespace Presentacion
             InitializeComponent();
         }
 
+        public string miid;
+
         public void RecuperarId(string id)
         {
-            throw new NotImplementedException();
+            miid = id;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        private void frmAcciones_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+       
+        private void CargarTicketsParticular()
+        {
+            if(txtValorDeBase.Text != string.Empty && cbMes.Text != string.Empty && cbAno.Text != string.Empty)
+            {
+               
+                var deuda = new Entidades.Deuda();
+                for (int i = 1; i < 5; i++)
+                {
+                    deuda.IdChofer = Convert.ToInt32(miid);
+                    deuda.IdPago = null;
+                    deuda.Monto = Convert.ToDouble(txtValorDeBase.Text);
+                    deuda.Fecha = new DateTime(Convert.ToInt32(cbAno.Text) , Convert.ToInt32(cbMes.Text), i);
+                    new Negocio.NDeuda().Insertar(deuda);
+                }
+            }
+        }
+
+        private void btnGenTickParticular_Click(object sender, EventArgs e)
         {
             frmSeleccionarChofer frm = new frmSeleccionarChofer(this);
             frm.ShowDialog();
+            CargarTicketsParticular();
+        }
+
+        private void txtValorDeBase_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
+            
+
+
         }
     }
 }
