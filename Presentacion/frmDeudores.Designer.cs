@@ -30,11 +30,11 @@
         {
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCobrar = new System.Windows.Forms.Button();
             this.txtMovil = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNomApell = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCobrar = new System.Windows.Forms.Button();
             this.lblMontoTotal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.chkEliminar = new System.Windows.Forms.CheckBox();
@@ -85,20 +85,6 @@
             this.panel2.Size = new System.Drawing.Size(300, 129);
             this.panel2.TabIndex = 26;
             // 
-            // btnCobrar
-            // 
-            this.btnCobrar.BackColor = System.Drawing.Color.White;
-            this.btnCobrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCobrar.FlatAppearance.BorderSize = 2;
-            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCobrar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(123, 161);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(89, 46);
-            this.btnCobrar.TabIndex = 20;
-            this.btnCobrar.Text = "Cobrar";
-            this.btnCobrar.UseVisualStyleBackColor = false;
-            // 
             // txtMovil
             // 
             this.txtMovil.BackColor = System.Drawing.Color.White;
@@ -137,13 +123,27 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Nombre/Apellido";
             // 
+            // btnCobrar
+            // 
+            this.btnCobrar.BackColor = System.Drawing.Color.White;
+            this.btnCobrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCobrar.FlatAppearance.BorderSize = 2;
+            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCobrar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar.Location = new System.Drawing.Point(123, 176);
+            this.btnCobrar.Name = "btnCobrar";
+            this.btnCobrar.Size = new System.Drawing.Size(235, 31);
+            this.btnCobrar.TabIndex = 20;
+            this.btnCobrar.Text = "Cobrar";
+            this.btnCobrar.UseVisualStyleBackColor = false;
+            // 
             // lblMontoTotal
             // 
             this.lblMontoTotal.AutoSize = true;
             this.lblMontoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblMontoTotal.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblMontoTotal.Location = new System.Drawing.Point(357, 186);
+            this.lblMontoTotal.Location = new System.Drawing.Point(377, 186);
             this.lblMontoTotal.Name = "lblMontoTotal";
             this.lblMontoTotal.Size = new System.Drawing.Size(141, 21);
             this.lblMontoTotal.TabIndex = 25;
@@ -155,7 +155,7 @@
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(557, 186);
+            this.lblTotal.Location = new System.Drawing.Point(567, 186);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(106, 21);
             this.lblTotal.TabIndex = 23;
