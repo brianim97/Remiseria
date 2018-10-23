@@ -18,10 +18,12 @@ namespace Presentacion
         }
 
         public string miid;
+        public string miNombre;
 
-        public void RecuperarId(string id)
+        public void RecuperarId(string id, string name)
         {
             miid = id;
+            miNombre = name;
         }
 
        
@@ -54,6 +56,7 @@ namespace Presentacion
             frmSeleccionarChofer frm = new frmSeleccionarChofer(this);
             frm.ShowDialog();
             CargarTicketsParticular();
+            lbl_nombre.Text = miNombre;
         }
 
         private void txtValorDeBase_KeyPress(object sender, KeyPressEventArgs e)

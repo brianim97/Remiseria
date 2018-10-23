@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbMes = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.lbl_nombre = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnGenTickTotales
@@ -45,7 +46,7 @@
             this.btnGenTickTotales.FlatAppearance.BorderSize = 2;
             this.btnGenTickTotales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenTickTotales.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenTickTotales.Location = new System.Drawing.Point(48, 12);
+            this.btnGenTickTotales.Location = new System.Drawing.Point(12, 12);
             this.btnGenTickTotales.Name = "btnGenTickTotales";
             this.btnGenTickTotales.Size = new System.Drawing.Size(204, 33);
             this.btnGenTickTotales.TabIndex = 20;
@@ -59,9 +60,9 @@
             this.btnGenTickParticular.FlatAppearance.BorderSize = 2;
             this.btnGenTickParticular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenTickParticular.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenTickParticular.Location = new System.Drawing.Point(48, 51);
+            this.btnGenTickParticular.Location = new System.Drawing.Point(12, 51);
             this.btnGenTickParticular.Name = "btnGenTickParticular";
-            this.btnGenTickParticular.Size = new System.Drawing.Size(204, 33);
+            this.btnGenTickParticular.Size = new System.Drawing.Size(120, 33);
             this.btnGenTickParticular.TabIndex = 21;
             this.btnGenTickParticular.Text = "Generar Deudas Particulares";
             this.btnGenTickParticular.UseVisualStyleBackColor = false;
@@ -164,11 +165,20 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Mes";
             // 
+            // lbl_nombre
+            // 
+            this.lbl_nombre.Location = new System.Drawing.Point(139, 51);
+            this.lbl_nombre.Name = "lbl_nombre";
+            this.lbl_nombre.Size = new System.Drawing.Size(145, 33);
+            this.lbl_nombre.TabIndex = 29;
+            this.lbl_nombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmAcciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 324);
+            this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.cbAno);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbMes);
@@ -195,5 +205,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbMes;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_nombre;
     }
 }

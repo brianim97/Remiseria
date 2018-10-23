@@ -73,9 +73,7 @@ namespace Presentacion
             idAA = (this.dgvSelChofer.CurrentRow.Cells["ID"].Value).ToString();
             idBB = (this.dgvSelChofer.CurrentRow.Cells["NombreApellido"].Value).ToString();
             
-            //frmPago.miid = idAA;
-            frmPago.MINombre = idBB;
-            frmPadre.RecuperarId(idAA);
+            frmPadre.RecuperarId(idAA, idBB);
             this.Hide();
         }
 

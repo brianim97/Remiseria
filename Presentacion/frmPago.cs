@@ -32,7 +32,7 @@ namespace Presentacion
         public string IMdni;
         public string IMmovil;
 
-        public static string MINombre;
+        public string MINombre;
         public string miid;
 
         public void HabilitarCriteriosDeBusqueda(bool nombre = false, bool mes = false, bool ano = false,bool dia = false, bool movil = false){
@@ -428,9 +428,10 @@ namespace Presentacion
 
         }
 
-        public void RecuperarId(string id)
+        public void RecuperarId(string id, string name)
         {
             miid = id;
+            MINombre = name;
         }
     }
     //Nombre+Mes+Año

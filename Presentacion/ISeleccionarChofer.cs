@@ -8,6 +8,6 @@ namespace Presentacion
 {
     public interface ISeleccionarChofer
     {
-        void RecuperarId(string id);
+        void RecuperarId(string id, string name);
     }
 }
