@@ -61,7 +61,6 @@
             this.btnGenTickTotales.TabIndex = 20;
             this.btnGenTickTotales.Text = "GENERAR TICKETS A TODOS LOS CHOFERES";
             this.btnGenTickTotales.UseVisualStyleBackColor = false;
-            this.btnGenTickTotales.Click += new System.EventHandler(this.btnGenTickTotales_Click);
             // 
             // btnGenTickParticular
             // 

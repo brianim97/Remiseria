@@ -83,7 +83,7 @@ namespace Datos
             cmd.Parameters.Add(new SQLiteParameter("@fecha", fecha));
 
             conector.Open();
-            int a = Convert.ToInt32(cmd.ExecuteScalar());
+            int a = (int)cmd.ExecuteScalar();
             conector.Close();
 
             return a == 1;
