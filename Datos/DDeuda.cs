@@ -21,7 +21,7 @@ namespace Datos
             cmd.Parameters.Add(new SQLiteParameter("@idchofer", d.IdChofer));
             cmd.Parameters.Add(new SQLiteParameter("@idpago", d.IdPago));
             cmd.Parameters.Add(new SQLiteParameter("@monto", d.Monto));
-            cmd.Parameters.Add(new SQLiteParameter("@fecha", d.Fecha));
+            cmd.Parameters.Add(new SQLiteParameter("@fecha", d.Fecha.ToString("yyyy-MM-dd")));
 
             conector.Open();
             cmd.ExecuteNonQuery();
