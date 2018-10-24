@@ -17,7 +17,7 @@ namespace Remiseria
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Presentacion.Entrada frm = new Presentacion.Entrada();
-             Application.Run(frm);
+            Application.Run(frm);
 
             
         }

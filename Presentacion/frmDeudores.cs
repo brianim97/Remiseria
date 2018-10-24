@@ -10,19 +10,60 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmDeudores : Form
+    public partial class frmDeudores : Form, ISeleccionarChofer
     {
         public frmDeudores()
         {
             InitializeComponent();
-            dgvDeudores.DataSource = new Negocio.NDeuda().Mostrar();
+            MostrarTablaCompleta();
+            OcultarColumnaChk();
+            DesabilitarBotonEliminar(true);
         }
+        private void SumarColumnaMonto()
+        {
+            float sumatoria = 0f;
+
+            foreach (DataGridViewRow row in dgvDeudores.Rows)
+            {
+                sumatoria += Convert.ToInt32(row.Cells["Monto"].Value);
+            }
+
+            lblMontoTotal.Text = "MONTO TOTAL: " + Convert.ToString(sumatoria);
+        }
+        private void MostrarTablaCompleta()
+        {
+            dgvDeudores.DataSource = new Negocio.NDeuda().Mostrar();
+            lblTotalRegistros.Text = "REGISTROS: " + dgvDeudores.Rows.Count.ToString();
+            SumarColumnaMonto();
+        }
+        private void OcultarColumnaChk()
+        {
+            dgvDeudores.Columns[0].Visible = false;
+        }
+        private void DesabilitarBotonEliminar(bool opcion)
+        {
+            if(opcion)
+                btnEliminar.Enabled = false;
+            else
+                btnEliminar.Enabled = true;
+        }
+        string miid,minombre;
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtMovil.Text != string.Empty)
-                new Negocio.NDeuda().MostrarPorMovil(Convert.ToInt32(txtMovil.Text));
-            
+            if (cbTipoBusqueda.Text == "Movil")
+            {
+                dgvDeudores.DataSource = new Negocio.NDeuda().MostrarPorMovil((txtBusqueda.Text));
+            }
+            else if (cbTipoBusqueda.Text == "Nombre/Apellido")
+            {
+                dgvDeudores.DataSource = new Negocio.NDeuda().MostrarPorNombreApellido((txtBusqueda.Text));
+            }
+            else
+                MostrarTablaCompleta();
+
+            lblTotalRegistros.Text = "REGISTROS: " + dgvDeudores.Rows.Count.ToString();
+            SumarColumnaMonto();
         }
 
         private void frmDeudores_Load(object sender, EventArgs e)
@@ -30,5 +71,55 @@ namespace Presentacion
             
         }
 
+        private void chkEliminar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEliminar.Checked)
+            {
+                this.dgvDeudores.Columns[0].Visible = true;
+                DesabilitarBotonEliminar(false);
+            }
+            else
+            {
+                this.dgvDeudores.Columns[0].Visible = false;
+                DesabilitarBotonEliminar(true);
+            }
+        }
+
+        public void RecuperarId(string id, string name)
+        {
+            miid = id;
+            minombre = name;
+        }
+
+        private void dgvDeudores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvDeudores.Columns["X"].Index)
+            {
+                DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)dgvDeudores.Rows[e.RowIndex].Cells["X"];
+                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+            }
+        }
+
+        private void dgvDeudores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RecuperarId(Convert.ToString(dgvDeudores.CurrentRow.Cells["idDeuda"].Value), Convert.ToString(dgvDeudores.CurrentRow.Cells["NombreApellido"].Value));
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text == string.Empty)
+                MostrarTablaCompleta();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (new Negocio.NDeuda().Eliminar(Convert.ToInt32(miid)))
+            {
+                MessageBox.Show("Se Elimino Correctamente el Registro");
+                MostrarTablaCompleta();
+            }
+            else
+                MessageBox.Show("Error al eliminar el Registro");
+        }   
     }
 }

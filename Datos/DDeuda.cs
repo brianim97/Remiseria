@@ -52,22 +52,42 @@ namespace Datos
         public DataTable Mostrar()
         {
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
-            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer";
+            conector.Open();
+            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer";
             SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conector);
             DataTable dt = new DataTable("Deudores");
             da.Fill(dt);
+            conector.Close();
             return dt;
         }
 
-        public DataTable MostrarPorMovil(int movil)
+        public DataTable MostrarPorMovil(string movil)
         {
+
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
-            string sql = @"SELECT * FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.Movil = @movil ";
+            conector.Open();
+            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.Movil LIKE @movil ";
             SQLiteCommand cmd = new SQLiteCommand(sql, conector);
-            cmd.Parameters.Add(new SQLiteParameter("@Movil", "%" + movil + "%"));
+            cmd.Parameters.Add(new SQLiteParameter("@movil","%"+ movil+ "%"));
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
             DataTable dt = new DataTable("Deudores");
             da.Fill(dt);
+            conector.Close();
+            return dt;
+        }
+
+        public DataTable MostrarPorNombreApellido(string nombreapellido)
+        {
+
+            SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
+            conector.Open();
+            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.NombreApellido LIKE @nombreapellido ";
+            SQLiteCommand cmd = new SQLiteCommand(sql, conector);
+            cmd.Parameters.Add(new SQLiteParameter("@nombreapellido", "%" + nombreapellido + "%"));
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            DataTable dt = new DataTable("Deudores");
+            da.Fill(dt);
+            conector.Close();
             return dt;
         }
 

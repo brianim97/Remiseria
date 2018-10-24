@@ -30,13 +30,11 @@
         {
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtMovil = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtNomApell = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.cbTipoBusqueda = new System.Windows.Forms.ComboBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.lblMontoTotal = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalRegistros = new System.Windows.Forms.Label();
             this.chkEliminar = new System.Windows.Forms.CheckBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvDeudores = new System.Windows.Forms.DataGridView();
@@ -44,13 +42,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbAnioFin = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbBuscarMesFin = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbAnio = new System.Windows.Forms.ComboBox();
+            this.cbAnioInicio = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbBuscarMes = new System.Windows.Forms.ComboBox();
+            this.cbBuscarMesInicio = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeudores)).BeginInit();
@@ -64,7 +62,7 @@
             this.btnBuscar.FlatAppearance.BorderSize = 2;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(106, 81);
+            this.btnBuscar.Location = new System.Drawing.Point(46, 83);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 33);
             this.btnBuscar.TabIndex = 19;
@@ -75,53 +73,37 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.cbTipoBusqueda);
             this.panel2.Controls.Add(this.btnBuscar);
-            this.panel2.Controls.Add(this.txtMovil);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.txtNomApell);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(58, 12);
+            this.panel2.Controls.Add(this.txtBusqueda);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 129);
+            this.panel2.Size = new System.Drawing.Size(187, 129);
             this.panel2.TabIndex = 26;
             // 
-            // txtMovil
+            // cbTipoBusqueda
             // 
-            this.txtMovil.BackColor = System.Drawing.Color.White;
-            this.txtMovil.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMovil.Location = new System.Drawing.Point(132, 6);
-            this.txtMovil.Name = "txtMovil";
-            this.txtMovil.Size = new System.Drawing.Size(62, 26);
-            this.txtMovil.TabIndex = 18;
+            this.cbTipoBusqueda.BackColor = System.Drawing.Color.White;
+            this.cbTipoBusqueda.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoBusqueda.FormattingEnabled = true;
+            this.cbTipoBusqueda.Items.AddRange(new object[] {
+            "Movil",
+            "Nombre/Apellido"});
+            this.cbTipoBusqueda.Location = new System.Drawing.Point(14, 14);
+            this.cbTipoBusqueda.Name = "cbTipoBusqueda";
+            this.cbTipoBusqueda.Size = new System.Drawing.Size(158, 27);
+            this.cbTipoBusqueda.TabIndex = 23;
+            this.cbTipoBusqueda.Text = "Movil";
             // 
-            // label9
+            // txtBusqueda
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(85, 6);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 19);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Movil";
-            // 
-            // txtNomApell
-            // 
-            this.txtNomApell.BackColor = System.Drawing.Color.White;
-            this.txtNomApell.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomApell.Location = new System.Drawing.Point(132, 38);
-            this.txtNomApell.Name = "txtNomApell";
-            this.txtNomApell.Size = new System.Drawing.Size(158, 26);
-            this.txtNomApell.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 19);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Nombre/Apellido";
+            this.txtBusqueda.BackColor = System.Drawing.Color.White;
+            this.txtBusqueda.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(14, 47);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(158, 26);
+            this.txtBusqueda.TabIndex = 4;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             // 
             // btnCobrar
             // 
@@ -130,9 +112,9 @@
             this.btnCobrar.FlatAppearance.BorderSize = 2;
             this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCobrar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(123, 176);
+            this.btnCobrar.Location = new System.Drawing.Point(123, 167);
             this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(235, 31);
+            this.btnCobrar.Size = new System.Drawing.Size(87, 40);
             this.btnCobrar.TabIndex = 20;
             this.btnCobrar.Text = "Cobrar";
             this.btnCobrar.UseVisualStyleBackColor = false;
@@ -143,23 +125,23 @@
             this.lblMontoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblMontoTotal.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblMontoTotal.Location = new System.Drawing.Point(377, 186);
+            this.lblMontoTotal.Location = new System.Drawing.Point(262, 159);
             this.lblMontoTotal.Name = "lblMontoTotal";
             this.lblMontoTotal.Size = new System.Drawing.Size(141, 21);
             this.lblMontoTotal.TabIndex = 25;
             this.lblMontoTotal.Text = "MONTO TOTAL: ";
             // 
-            // lblTotal
+            // lblTotalRegistros
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotal.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(567, 186);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(106, 21);
-            this.lblTotal.TabIndex = 23;
-            this.lblTotal.Text = "REGISTROS:";
+            this.lblTotalRegistros.AutoSize = true;
+            this.lblTotalRegistros.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalRegistros.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRegistros.ForeColor = System.Drawing.Color.White;
+            this.lblTotalRegistros.Location = new System.Drawing.Point(262, 186);
+            this.lblTotalRegistros.Name = "lblTotalRegistros";
+            this.lblTotalRegistros.Size = new System.Drawing.Size(106, 21);
+            this.lblTotalRegistros.TabIndex = 23;
+            this.lblTotalRegistros.Text = "REGISTROS:";
             // 
             // chkEliminar
             // 
@@ -171,6 +153,7 @@
             this.chkEliminar.TabIndex = 22;
             this.chkEliminar.Text = "X";
             this.chkEliminar.UseVisualStyleBackColor = true;
+            this.chkEliminar.CheckedChanged += new System.EventHandler(this.chkEliminar_CheckedChanged);
             // 
             // btnEliminar
             // 
@@ -185,6 +168,7 @@
             this.btnEliminar.TabIndex = 21;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dgvDeudores
             // 
@@ -197,8 +181,10 @@
             this.dgvDeudores.Location = new System.Drawing.Point(0, 211);
             this.dgvDeudores.Name = "dgvDeudores";
             this.dgvDeudores.ReadOnly = true;
-            this.dgvDeudores.Size = new System.Drawing.Size(734, 262);
+            this.dgvDeudores.Size = new System.Drawing.Size(492, 262);
             this.dgvDeudores.TabIndex = 20;
+            this.dgvDeudores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeudores_CellClick);
+            this.dgvDeudores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeudores_CellContentClick);
             // 
             // X
             // 
@@ -214,15 +200,15 @@
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbAnioFin);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.cbBuscarMesFin);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.cbAnio);
+            this.panel1.Controls.Add(this.cbAnioInicio);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cbBuscarMes);
+            this.panel1.Controls.Add(this.cbBuscarMesInicio);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(381, 12);
+            this.panel1.Location = new System.Drawing.Point(205, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(282, 80);
             this.panel1.TabIndex = 27;
@@ -247,12 +233,12 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Inicio";
             // 
-            // comboBox1
+            // cbAnioFin
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbAnioFin.BackColor = System.Drawing.Color.White;
+            this.cbAnioFin.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAnioFin.FormattingEnabled = true;
+            this.cbAnioFin.Items.AddRange(new object[] {
             "2018",
             "2019",
             "2020",
@@ -276,10 +262,10 @@
             "2038",
             "2039",
             "2040"});
-            this.comboBox1.Location = new System.Drawing.Point(199, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 27);
-            this.comboBox1.TabIndex = 20;
+            this.cbAnioFin.Location = new System.Drawing.Point(199, 41);
+            this.cbAnioFin.Name = "cbAnioFin";
+            this.cbAnioFin.Size = new System.Drawing.Size(75, 27);
+            this.cbAnioFin.TabIndex = 20;
             // 
             // label1
             // 
@@ -291,12 +277,12 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Año";
             // 
-            // comboBox2
+            // cbBuscarMesFin
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.White;
-            this.comboBox2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbBuscarMesFin.BackColor = System.Drawing.Color.White;
+            this.cbBuscarMesFin.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBuscarMesFin.FormattingEnabled = true;
+            this.cbBuscarMesFin.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -309,10 +295,10 @@
             "10",
             "11",
             "12"});
-            this.comboBox2.Location = new System.Drawing.Point(90, 41);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(44, 27);
-            this.comboBox2.TabIndex = 18;
+            this.cbBuscarMesFin.Location = new System.Drawing.Point(90, 41);
+            this.cbBuscarMesFin.Name = "cbBuscarMesFin";
+            this.cbBuscarMesFin.Size = new System.Drawing.Size(44, 27);
+            this.cbBuscarMesFin.TabIndex = 18;
             // 
             // label4
             // 
@@ -324,12 +310,12 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Mes";
             // 
-            // cbAnio
+            // cbAnioInicio
             // 
-            this.cbAnio.BackColor = System.Drawing.Color.White;
-            this.cbAnio.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAnio.FormattingEnabled = true;
-            this.cbAnio.Items.AddRange(new object[] {
+            this.cbAnioInicio.BackColor = System.Drawing.Color.White;
+            this.cbAnioInicio.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbAnioInicio.FormattingEnabled = true;
+            this.cbAnioInicio.Items.AddRange(new object[] {
             "2018",
             "2019",
             "2020",
@@ -353,10 +339,10 @@
             "2038",
             "2039",
             "2040"});
-            this.cbAnio.Location = new System.Drawing.Point(199, 8);
-            this.cbAnio.Name = "cbAnio";
-            this.cbAnio.Size = new System.Drawing.Size(75, 27);
-            this.cbAnio.TabIndex = 16;
+            this.cbAnioInicio.Location = new System.Drawing.Point(199, 8);
+            this.cbAnioInicio.Name = "cbAnioInicio";
+            this.cbAnioInicio.Size = new System.Drawing.Size(75, 27);
+            this.cbAnioInicio.TabIndex = 16;
             // 
             // label2
             // 
@@ -368,12 +354,12 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Año";
             // 
-            // cbBuscarMes
+            // cbBuscarMesInicio
             // 
-            this.cbBuscarMes.BackColor = System.Drawing.Color.White;
-            this.cbBuscarMes.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBuscarMes.FormattingEnabled = true;
-            this.cbBuscarMes.Items.AddRange(new object[] {
+            this.cbBuscarMesInicio.BackColor = System.Drawing.Color.White;
+            this.cbBuscarMesInicio.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBuscarMesInicio.FormattingEnabled = true;
+            this.cbBuscarMesInicio.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -386,10 +372,10 @@
             "10",
             "11",
             "12"});
-            this.cbBuscarMes.Location = new System.Drawing.Point(90, 8);
-            this.cbBuscarMes.Name = "cbBuscarMes";
-            this.cbBuscarMes.Size = new System.Drawing.Size(44, 27);
-            this.cbBuscarMes.TabIndex = 5;
+            this.cbBuscarMesInicio.Location = new System.Drawing.Point(90, 8);
+            this.cbBuscarMesInicio.Name = "cbBuscarMesInicio";
+            this.cbBuscarMesInicio.Size = new System.Drawing.Size(44, 27);
+            this.cbBuscarMesInicio.TabIndex = 5;
             // 
             // label3
             // 
@@ -406,12 +392,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Firebrick;
-            this.ClientSize = new System.Drawing.Size(734, 473);
+            this.ClientSize = new System.Drawing.Size(492, 473);
             this.Controls.Add(this.btnCobrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblMontoTotal);
-            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblTotalRegistros);
             this.Controls.Add(this.chkEliminar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvDeudores);
@@ -431,12 +417,9 @@
         #endregion
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtMovil;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtNomApell;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label lblMontoTotal;
-        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblTotalRegistros;
         private System.Windows.Forms.CheckBox chkEliminar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvDeudores;
@@ -444,14 +427,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAnioFin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbBuscarMesFin;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbAnio;
+        private System.Windows.Forms.ComboBox cbAnioInicio;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbBuscarMes;
+        private System.Windows.Forms.ComboBox cbBuscarMesInicio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCobrar;
+        private System.Windows.Forms.ComboBox cbTipoBusqueda;
     }
 }

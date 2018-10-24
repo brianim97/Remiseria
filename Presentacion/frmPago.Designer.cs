@@ -312,7 +312,7 @@
             this.panel3.Controls.Add(this.btnBuscar);
             this.panel3.Controls.Add(this.cbTipoBusqueda);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(72, 29);
+            this.panel3.Location = new System.Drawing.Point(72, 6);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 117);
             this.panel3.TabIndex = 18;
@@ -373,7 +373,7 @@
             this.panel2.Controls.Add(this.cbDiaInicio);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label);
-            this.panel2.Location = new System.Drawing.Point(349, 17);
+            this.panel2.Location = new System.Drawing.Point(350, 6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 141);
             this.panel2.TabIndex = 16;
@@ -608,7 +608,7 @@
             this.lblMontoTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblMontoTotal.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontoTotal.ForeColor = System.Drawing.Color.White;
-            this.lblMontoTotal.Location = new System.Drawing.Point(346, 173);
+            this.lblMontoTotal.Location = new System.Drawing.Point(441, 152);
             this.lblMontoTotal.Name = "lblMontoTotal";
             this.lblMontoTotal.Size = new System.Drawing.Size(141, 21);
             this.lblMontoTotal.TabIndex = 15;
@@ -636,7 +636,7 @@
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(554, 173);
+            this.lblTotal.Location = new System.Drawing.Point(441, 178);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(106, 21);
             this.lblTotal.TabIndex = 8;

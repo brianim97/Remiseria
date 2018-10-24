@@ -24,9 +24,13 @@ namespace Negocio
             return new Datos.DDeuda().Mostrar();
         }
 
-        public DataTable MostrarPorMovil(int movil)
+        public DataTable MostrarPorMovil(string movil)
         {
             return new Datos.DDeuda().MostrarPorMovil(movil);
+        }
+        public DataTable MostrarPorNombreApellido(string nombreapellido)
+        {
+            return new Datos.DDeuda().MostrarPorNombreApellido(nombreapellido);
         }
     }
 }
