@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet2.xsd" xmlns:mstns="http://tempuri.org/DataSet2.xsd" xmlns="http://tempuri.org/DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.Presentacion.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="Devart.Data.SQLite" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReportePagoTableAdapter" GeneratorDataComponentClassName="ReportePagoTableAdapter" Name="ReportePago" UserDataComponentName="ReportePagoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="&quot;main&quot;.ReportePago" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Anio, "Anio:1", Concepto, Dia, Direccion, Dni, EsActivo, EstadoCivil, FechaIngreso, FechaNacimiento, Hora, idChofer, "idChofer:1", idPago, MarcaModelo, Mes, Monto, Movil, NombreApellido, NroChasis, NroMotor, NroTelefono, Patente, Propietario, TelPropietario FROM "main".ReportePago</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Anio" DataSetColumn="Anio" />
+              <Mapping SourceColumn="Anio:1" DataSetColumn="Anio:1" />
+              <Mapping SourceColumn="Concepto" DataSetColumn="Concepto" />
+              <Mapping SourceColumn="Dia" DataSetColumn="Dia" />
+              <Mapping SourceColumn="Direccion" DataSetColumn="Direccion" />
+              <Mapping SourceColumn="Dni" DataSetColumn="Dni" />
+              <Mapping SourceColumn="EsActivo" DataSetColumn="EsActivo" />
+              <Mapping SourceColumn="EstadoCivil" DataSetColumn="EstadoCivil" />
+              <Mapping SourceColumn="FechaIngreso" DataSetColumn="FechaIngreso" />
+              <Mapping SourceColumn="FechaNacimiento" DataSetColumn="FechaNacimiento" />
+              <Mapping SourceColumn="Hora" DataSetColumn="Hora" />
+              <Mapping SourceColumn="idChofer" DataSetColumn="idChofer" />
+              <Mapping SourceColumn="idChofer:1" DataSetColumn="idChofer:1" />
+              <Mapping SourceColumn="idPago" DataSetColumn="idPago" />
+              <Mapping SourceColumn="MarcaModelo" DataSetColumn="MarcaModelo" />
+              <Mapping SourceColumn="Mes" DataSetColumn="Mes" />
+              <Mapping SourceColumn="Monto" DataSetColumn="Monto" />
+              <Mapping SourceColumn="Movil" DataSetColumn="Movil" />
+              <Mapping SourceColumn="NombreApellido" DataSetColumn="NombreApellido" />
+              <Mapping SourceColumn="NroChasis" DataSetColumn="NroChasis" />
+              <Mapping SourceColumn="NroMotor" DataSetColumn="NroMotor" />
+              <Mapping SourceColumn="NroTelefono" DataSetColumn="NroTelefono" />
+              <Mapping SourceColumn="Patente" DataSetColumn="Patente" />
+              <Mapping SourceColumn="Propietario" DataSetColumn="Propietario" />
+              <Mapping SourceColumn="TelPropietario" DataSetColumn="TelPropietario" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet2" msprop:Generator_UserDSName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReportePago" msprop:Generator_TableClassName="ReportePagoDataTable" msprop:Generator_TableVarName="tableReportePago" msprop:Generator_TablePropName="ReportePago" msprop:Generator_RowDeletingName="ReportePagoRowDeleting" msprop:Generator_RowChangingName="ReportePagoRowChanging" msprop:Generator_RowEvHandlerName="ReportePagoRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportePagoRowDeleted" msprop:Generator_UserTableName="ReportePago" msprop:Generator_RowChangedName="ReportePagoRowChanged" msprop:Generator_RowEvArgName="ReportePagoRowChangeEvent" msprop:Generator_RowClassName="ReportePagoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Anio" msprop:Generator_ColumnVarNameInTable="columnAnio" msprop:Generator_ColumnPropNameInRow="Anio" msprop:Generator_ColumnPropNameInTable="AnioColumn" msprop:Generator_UserColumnName="Anio" type="xs:string" />
+              <xs:element name="Anio_x003A_1" msprop:Generator_ColumnVarNameInTable="_columnAnio_1" msprop:Generator_ColumnPropNameInRow="_Anio_1" msprop:Generator_ColumnPropNameInTable="_Anio_1Column" msprop:Generator_UserColumnName="Anio:1" type="xs:string" />
+              <xs:element name="Concepto" msprop:Generator_ColumnVarNameInTable="columnConcepto" msprop:Generator_ColumnPropNameInRow="Concepto" msprop:Generator_ColumnPropNameInTable="ConceptoColumn" msprop:Generator_UserColumnName="Concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="Dia" msprop:Generator_ColumnVarNameInTable="columnDia" msprop:Generator_ColumnPropNameInRow="Dia" msprop:Generator_ColumnPropNameInTable="DiaColumn" msprop:Generator_UserColumnName="Dia" type="xs:string" />
+              <xs:element name="Direccion" msprop:Generator_ColumnVarNameInTable="columnDireccion" msprop:Generator_ColumnPropNameInRow="Direccion" msprop:Generator_ColumnPropNameInTable="DireccionColumn" msprop:Generator_UserColumnName="Direccion" type="xs:string" />
+              <xs:element name="Dni" msprop:Generator_ColumnVarNameInTable="columnDni" msprop:Generator_ColumnPropNameInRow="Dni" msprop:Generator_ColumnPropNameInTable="DniColumn" msprop:Generator_UserColumnName="Dni" type="xs:long" />
+              <xs:element name="EsActivo" msprop:Generator_ColumnVarNameInTable="columnEsActivo" msprop:Generator_ColumnPropNameInRow="EsActivo" msprop:Generator_ColumnPropNameInTable="EsActivoColumn" msprop:Generator_UserColumnName="EsActivo" type="xs:long" minOccurs="0" />
+              <xs:element name="EstadoCivil" msprop:Generator_ColumnVarNameInTable="columnEstadoCivil" msprop:Generator_ColumnPropNameInRow="EstadoCivil" msprop:Generator_ColumnPropNameInTable="EstadoCivilColumn" msprop:Generator_UserColumnName="EstadoCivil" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaIngreso" msprop:Generator_ColumnVarNameInTable="columnFechaIngreso" msprop:Generator_ColumnPropNameInRow="FechaIngreso" msprop:Generator_ColumnPropNameInTable="FechaIngresoColumn" msprop:Generator_UserColumnName="FechaIngreso" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaNacimiento" msprop:Generator_ColumnVarNameInTable="columnFechaNacimiento" msprop:Generator_ColumnPropNameInRow="FechaNacimiento" msprop:Generator_ColumnPropNameInTable="FechaNacimientoColumn" msprop:Generator_UserColumnName="FechaNacimiento" type="xs:string" />
+              <xs:element name="Hora" msprop:Generator_ColumnVarNameInTable="columnHora" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_ColumnPropNameInTable="HoraColumn" msprop:Generator_UserColumnName="Hora" type="xs:string" />
+              <xs:element name="idChofer" msprop:Generator_ColumnVarNameInTable="columnidChofer" msprop:Generator_ColumnPropNameInRow="idChofer" msprop:Generator_ColumnPropNameInTable="idChoferColumn" msprop:Generator_UserColumnName="idChofer" type="xs:long" />
+              <xs:element name="idChofer_x003A_1" msprop:Generator_ColumnVarNameInTable="_columnidChofer_1" msprop:Generator_ColumnPropNameInRow="_idChofer_1" msprop:Generator_ColumnPropNameInTable="_idChofer_1Column" msprop:Generator_UserColumnName="idChofer:1" type="xs:long" />
+              <xs:element name="idPago" msprop:Generator_ColumnVarNameInTable="columnidPago" msprop:Generator_ColumnPropNameInRow="idPago" msprop:Generator_ColumnPropNameInTable="idPagoColumn" msprop:Generator_UserColumnName="idPago" type="xs:long" />
+              <xs:element name="MarcaModelo" msprop:Generator_ColumnVarNameInTable="columnMarcaModelo" msprop:Generator_ColumnPropNameInRow="MarcaModelo" msprop:Generator_ColumnPropNameInTable="MarcaModeloColumn" msprop:Generator_UserColumnName="MarcaModelo" type="xs:string" />
+              <xs:element name="Mes" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:string" />
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:double" />
+              <xs:element name="Movil" msprop:Generator_ColumnVarNameInTable="columnMovil" msprop:Generator_ColumnPropNameInRow="Movil" msprop:Generator_ColumnPropNameInTable="MovilColumn" msprop:Generator_UserColumnName="Movil" type="xs:string" />
+              <xs:element name="NombreApellido" msprop:Generator_ColumnVarNameInTable="columnNombreApellido" msprop:Generator_ColumnPropNameInRow="NombreApellido" msprop:Generator_ColumnPropNameInTable="NombreApellidoColumn" msprop:Generator_UserColumnName="NombreApellido" type="xs:string" />
+              <xs:element name="NroChasis" msprop:Generator_ColumnVarNameInTable="columnNroChasis" msprop:Generator_ColumnPropNameInRow="NroChasis" msprop:Generator_ColumnPropNameInTable="NroChasisColumn" msprop:Generator_UserColumnName="NroChasis" type="xs:string" minOccurs="0" />
+              <xs:element name="NroMotor" msprop:Generator_ColumnVarNameInTable="columnNroMotor" msprop:Generator_ColumnPropNameInRow="NroMotor" msprop:Generator_ColumnPropNameInTable="NroMotorColumn" msprop:Generator_UserColumnName="NroMotor" type="xs:string" minOccurs="0" />
+              <xs:element name="NroTelefono" msprop:Generator_ColumnVarNameInTable="columnNroTelefono" msprop:Generator_ColumnPropNameInRow="NroTelefono" msprop:Generator_ColumnPropNameInTable="NroTelefonoColumn" msprop:Generator_UserColumnName="NroTelefono" type="xs:string" minOccurs="0" />
+              <xs:element name="Patente" msprop:Generator_ColumnVarNameInTable="columnPatente" msprop:Generator_ColumnPropNameInRow="Patente" msprop:Generator_ColumnPropNameInTable="PatenteColumn" msprop:Generator_UserColumnName="Patente" type="xs:string" />
+              <xs:element name="Propietario" msprop:Generator_ColumnVarNameInTable="columnPropietario" msprop:Generator_ColumnPropNameInRow="Propietario" msprop:Generator_ColumnPropNameInTable="PropietarioColumn" msprop:Generator_UserColumnName="Propietario" type="xs:string" />
+              <xs:element name="TelPropietario" msprop:Generator_ColumnVarNameInTable="columnTelPropietario" msprop:Generator_ColumnPropNameInRow="TelPropietario" msprop:Generator_ColumnPropNameInTable="TelPropietarioColumn" msprop:Generator_UserColumnName="TelPropietario" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:ReportePago" />
+      <xs:field xpath="mstns:Dni" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:ReportePago" />
+      <xs:field xpath="mstns:NombreApellido" />
+    </xs:unique>
+    <xs:unique name="Constraint3" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReportePago" />
+      <xs:field xpath="mstns:idChofer_x003A_1" />
+      <xs:field xpath="mstns:idPago" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

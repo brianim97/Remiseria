@@ -5,11 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+
 
 namespace Negocio
 {
     public class NPago
     {
+        public SQLiteDataAdapter TraerVistaPago()
+        {
+            return new Datos.DPago().TraerVistaPago();
+        }
+
+
         public static string Insertar(string dia, string mes, string anio, string hora, int idChofer, double monto)
         {
             DPago obj = new DPago();
