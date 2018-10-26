@@ -47,7 +47,8 @@ namespace Presentacion
             else
                 btnEliminar.Enabled = true;
         }
-        string miid,minombre;
+        string miid,minombre,idChoferPago,MontoPago;
+        
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -103,12 +104,27 @@ namespace Presentacion
         private void dgvDeudores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             RecuperarId(Convert.ToString(dgvDeudores.CurrentRow.Cells["idDeuda"].Value), Convert.ToString(dgvDeudores.CurrentRow.Cells["NombreApellido"].Value));
+            idChoferPago = Convert.ToString(dgvDeudores.CurrentRow.Cells["ID"].Value);
+            MontoPago = Convert.ToString(dgvDeudores.CurrentRow.Cells["Monto"].Value);
+            btnCobrar.Enabled = true;
+
+
         }
 
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
             if (txtBusqueda.Text == string.Empty)
                 MostrarTablaCompleta();
+        }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+            Entidades.Deuda d = new Entidades.Deuda();
+            d.IdChofer = Convert.ToInt32(idChoferPago);
+            d.Monto = Convert.ToDouble(MontoPago);
+            frmPago frm = new frmPago(d);
+            frm.Show();
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

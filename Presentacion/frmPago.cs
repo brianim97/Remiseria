@@ -17,8 +17,13 @@ namespace Presentacion
     {
         public frmPago()
         {
-            InitializeComponent();
 
+        }
+        public frmPago(Entidades.Deuda d)
+        {
+            InitializeComponent();
+            txtMonto.Text = Convert.ToString(d.Monto);
+            lblChofer.Text = d.IdChofer.ToString();
         }
 
         public string IMidpago;
@@ -58,7 +63,7 @@ namespace Presentacion
         private void Limpiar()
         {
             this.dtpFechaPago.Text = string.Empty;
-            this.btnSelChofer.Enabled = false;
+            //this.btnSelChofer.Enabled = false;
             this.txtMonto.Text = string.Empty;
 
         }
@@ -66,7 +71,7 @@ namespace Presentacion
         {
            
             dtpFechaPago.Enabled = value;
-            btnSelChofer.Enabled = value;
+            //btnSelChofer.Enabled = value;
             txtMonto.Enabled = value;
             btnGuardar.Enabled = value;
         }
@@ -86,7 +91,7 @@ namespace Presentacion
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             BloquearCampos(true);
-            btnSelChofer.Enabled = true;
+            //btnSelChofer.Enabled = true;
             btnNuevo.Enabled = false;
             
 
@@ -112,7 +117,7 @@ namespace Presentacion
                 try
                 {
                     frmSeleccionarChofer frm = new frmSeleccionarChofer(this);
-                    NPago.Insertar(dtpFechaPago.Value.Day.ToString(), dtpFechaPago.Value.Month.ToString(),dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString(), Convert.ToInt32(miid), Convert.ToDouble(txtMonto.Text));
+                    NPago.Insertar(dtpFechaPago.Value.Day.ToString(), dtpFechaPago.Value.Month.ToString(),dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString(), Convert.ToInt32(lblChofer.Text), Convert.ToDouble(txtMonto.Text));
                    // GuardarDatosImpresion(dtpFechaPago.Value.Day.ToString()+"/"+dtpFechaPago.Value.Month.ToString() + "/" + dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString());
                     MessageBox.Show("Datos Ingresados Correctamente");
                     MostrarTodosLosPagos();

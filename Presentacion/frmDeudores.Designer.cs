@@ -118,6 +118,7 @@
             this.btnCobrar.TabIndex = 20;
             this.btnCobrar.Text = "Cobrar";
             this.btnCobrar.UseVisualStyleBackColor = false;
+            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
             // 
             // lblMontoTotal
             // 

@@ -430,7 +430,7 @@ namespace Presentacion
         private void dgbListado_DoubleClick(object sender, EventArgs e)
         {
             //al hacer doble click en el datagridview se pasan los datos de una fila a la parte de mantenimiento
-            this.txtId.Text = Convert.ToString(this.dgbListado.CurrentRow.Cells["ID"].Value);
+            this.txtId.Text = Convert.ToString(this.dgbListado.CurrentRow.Cells["idChofer"].Value);
             this.txtMovil.Text = Convert.ToString(this.dgbListado.CurrentRow.Cells["Movil"].Value);
             this.txtNombreApellido.Text = Convert.ToString(this.dgbListado.CurrentRow.Cells["NombreApellido"].Value);
             this.txtDni.Text = Convert.ToString(this.dgbListado.CurrentRow.Cells["Dni"].Value);

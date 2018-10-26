@@ -41,7 +41,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnSelChofer = new System.Windows.Forms.Button();
             this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnImprimirReportes = new System.Windows.Forms.Button();
@@ -168,7 +167,6 @@
             this.panel1.Controls.Add(this.lblChofer);
             this.panel1.Controls.Add(this.txtMonto);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Controls.Add(this.btnSelChofer);
             this.panel1.Controls.Add(this.dtpFechaPago);
             this.panel1.Location = new System.Drawing.Point(197, 93);
             this.panel1.Name = "panel1";
@@ -179,7 +177,7 @@
             // 
             this.lblChofer.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChofer.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblChofer.Location = new System.Drawing.Point(79, 122);
+            this.lblChofer.Location = new System.Drawing.Point(83, 107);
             this.lblChofer.Name = "lblChofer";
             this.lblChofer.Size = new System.Drawing.Size(197, 20);
             this.lblChofer.TabIndex = 8;
@@ -250,17 +248,6 @@
             this.label6.Text = "Chofer";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // btnSelChofer
-            // 
-            this.btnSelChofer.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelChofer.Location = new System.Drawing.Point(80, 87);
-            this.btnSelChofer.Name = "btnSelChofer";
-            this.btnSelChofer.Size = new System.Drawing.Size(114, 32);
-            this.btnSelChofer.TabIndex = 5;
-            this.btnSelChofer.Text = "Seleccionar";
-            this.btnSelChofer.UseVisualStyleBackColor = true;
-            this.btnSelChofer.Click += new System.EventHandler(this.btnSelChofer_Click);
             // 
             // dtpFechaPago
             // 
@@ -750,7 +737,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtMonto;
-        private System.Windows.Forms.Button btnSelChofer;
         private System.Windows.Forms.ComboBox cbBuscarMes;
         private System.Windows.Forms.TextBox txtBuscarNomA;
         private System.Windows.Forms.Label label5;
