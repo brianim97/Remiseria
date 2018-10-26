@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,14 @@ namespace Datos
         private int _IdPago;
         private string _Dia;
         private string _Mes;
+
+        public SQLiteDataAdapter TraerVistaPago()
+        {
+            string str = @"SELECT * FROM ReportePago";
+            SQLiteDataAdapter da = new SQLiteDataAdapter(str,Conexion.strConexion);
+            return da;
+        }
+
         private string _Anio;
         private string _Hora;
         private int _idChofer;

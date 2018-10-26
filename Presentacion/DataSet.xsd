@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet2" targetNamespace="http://tempuri.org/DataSet21.xsd" xmlns:mstns="http://tempuri.org/DataSet21.xsd" xmlns="http://tempuri.org/DataSet21.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.Presentacion.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="Devart.Data.SQLite" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReportePagoTableAdapter" GeneratorDataComponentClassName="ReportePagoTableAdapter" Name="ReportePago" UserDataComponentName="ReportePagoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="&quot;main&quot;.ReportePago" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Año, Dni, Hora, MarcaModelo, Monto, Movil, NombreApellido, Patente FROM "main".ReportePago</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Año" DataSetColumn="Año" />
+              <Mapping SourceColumn="Dni" DataSetColumn="Dni" />
+              <Mapping SourceColumn="Hora" DataSetColumn="Hora" />
+              <Mapping SourceColumn="MarcaModelo" DataSetColumn="MarcaModelo" />
+              <Mapping SourceColumn="Monto" DataSetColumn="Monto" />
+              <Mapping SourceColumn="Movil" DataSetColumn="Movil" />
+              <Mapping SourceColumn="NombreApellido" DataSetColumn="NombreApellido" />
+              <Mapping SourceColumn="Patente" DataSetColumn="Patente" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet2" msprop:Generator_UserDSName="DataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReportePago" msprop:Generator_TableClassName="ReportePagoDataTable" msprop:Generator_TableVarName="tableReportePago" msprop:Generator_RowChangedName="ReportePagoRowChanged" msprop:Generator_TablePropName="ReportePago" msprop:Generator_RowDeletingName="ReportePagoRowDeleting" msprop:Generator_RowChangingName="ReportePagoRowChanging" msprop:Generator_RowEvHandlerName="ReportePagoRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportePagoRowDeleted" msprop:Generator_RowClassName="ReportePagoRow" msprop:Generator_UserTableName="ReportePago" msprop:Generator_RowEvArgName="ReportePagoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Año" msprop:Generator_ColumnVarNameInTable="columnAño" msprop:Generator_ColumnPropNameInRow="Año" msprop:Generator_ColumnPropNameInTable="AñoColumn" msprop:Generator_UserColumnName="Año" type="xs:string" minOccurs="0" />
+              <xs:element name="Dni" msprop:Generator_ColumnVarNameInTable="columnDni" msprop:Generator_ColumnPropNameInRow="Dni" msprop:Generator_ColumnPropNameInTable="DniColumn" msprop:Generator_UserColumnName="Dni" type="xs:long" />
+              <xs:element name="Hora" msprop:Generator_ColumnVarNameInTable="columnHora" msprop:Generator_ColumnPropNameInRow="Hora" msprop:Generator_ColumnPropNameInTable="HoraColumn" msprop:Generator_UserColumnName="Hora" type="xs:string" />
+              <xs:element name="MarcaModelo" msprop:Generator_ColumnVarNameInTable="columnMarcaModelo" msprop:Generator_ColumnPropNameInRow="MarcaModelo" msprop:Generator_ColumnPropNameInTable="MarcaModeloColumn" msprop:Generator_UserColumnName="MarcaModelo" type="xs:string" />
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:double" />
+              <xs:element name="Movil" msprop:Generator_ColumnVarNameInTable="columnMovil" msprop:Generator_ColumnPropNameInRow="Movil" msprop:Generator_ColumnPropNameInTable="MovilColumn" msprop:Generator_UserColumnName="Movil" type="xs:string" />
+              <xs:element name="NombreApellido" msprop:Generator_ColumnVarNameInTable="columnNombreApellido" msprop:Generator_ColumnPropNameInRow="NombreApellido" msprop:Generator_ColumnPropNameInTable="NombreApellidoColumn" msprop:Generator_UserColumnName="NombreApellido" type="xs:string" />
+              <xs:element name="Patente" msprop:Generator_ColumnVarNameInTable="columnPatente" msprop:Generator_ColumnPropNameInRow="Patente" msprop:Generator_ColumnPropNameInTable="PatenteColumn" msprop:Generator_UserColumnName="Patente" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:ReportePago" />
+      <xs:field xpath="mstns:Dni" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:ReportePago" />
+      <xs:field xpath="mstns:NombreApellido" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -420,7 +420,8 @@ namespace Presentacion
 
         private void btnImprimirReportes_Click(object sender, EventArgs e)
         {
-
+            var frm2 = new frm_RepoPagoEntreFechas();
+            frm2.Show();
         }
 
         private void lblChofer_Click(object sender, EventArgs e)
