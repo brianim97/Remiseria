@@ -16,6 +16,7 @@ namespace Datos
         private string _Dia;
         private string _Mes;
 
+
         public SQLiteDataAdapter TraerVistaPago()
         {
             string str = @"SELECT * FROM ReportePago";
