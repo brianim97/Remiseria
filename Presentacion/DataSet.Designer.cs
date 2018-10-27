@@ -924,7 +924,7 @@ namespace Presentacion.DataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::Devart.Data.SQLite.SQLiteConnection();
-            this._connection.ConnectionString = global::Presentacion.Properties.Settings.Default.ConnectionString1;
+            this._connection.ConnectionString = global::Presentacion.Properties.Settings.Default.ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
