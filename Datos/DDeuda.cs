@@ -53,7 +53,7 @@ namespace Datos
         {
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
             conector.Open();
-            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda, Chofer.idChofer as ID FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer";
+            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda, Chofer.idChofer  FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer";
             SQLiteDataAdapter da = new SQLiteDataAdapter(sql, conector);
             DataTable dt = new DataTable("Deudores");
             da.Fill(dt);
@@ -66,7 +66,7 @@ namespace Datos
 
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
             conector.Open();
-            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda, Chofer.idChofer as ID FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.Movil LIKE @movil ";
+            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda, Chofer.idChofer  FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.Movil LIKE @movil ";
             SQLiteCommand cmd = new SQLiteCommand(sql, conector);
             cmd.Parameters.Add(new SQLiteParameter("@movil","%"+ movil+ "%"));
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
@@ -81,7 +81,7 @@ namespace Datos
 
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
             conector.Open();
-            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda, Chofer.idChofer as ID FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.NombreApellido LIKE @nombreapellido ";
+            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda, Chofer.idChofer  FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.NombreApellido LIKE @nombreapellido ";
             SQLiteCommand cmd = new SQLiteCommand(sql, conector);
             cmd.Parameters.Add(new SQLiteParameter("@nombreapellido", "%" + nombreapellido + "%"));
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);

@@ -19,6 +19,7 @@ namespace Presentacion
             OcultarColumnaChk();
             DesabilitarBotonEliminar(true);
         }
+        int idDeuda;
         private void SumarColumnaMonto()
         {
             float sumatoria = 0f;
@@ -105,6 +106,8 @@ namespace Presentacion
         {
             RecuperarId(Convert.ToString(dgvDeudores.CurrentRow.Cells["idChofer"].Value), Convert.ToString(dgvDeudores.CurrentRow.Cells["NombreApellido"].Value));
             MontoPago = Convert.ToString(dgvDeudores.CurrentRow.Cells["Monto"].Value);
+            idDeuda = Convert.ToInt32(dgvDeudores.CurrentRow.Cells["idDeuda"].Value);
+
             btnCobrar.Enabled = true;
 
 
@@ -121,6 +124,7 @@ namespace Presentacion
             Entidades.Deuda d = new Entidades.Deuda();
             d.IdChofer = Convert.ToInt32(miid);
             d.Monto = Convert.ToDouble(MontoPago);
+            d.IdDeuda = idDeuda;
             frmPago frm = new frmPago(d,minombre);
             frm.Show();
 

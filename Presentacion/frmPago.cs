@@ -15,6 +15,15 @@ namespace Presentacion
 {
     public partial class frmPago : Form, ISeleccionarChofer
     {
+        public frmPago(Entidades.Deuda d, string nombreChofer)
+        {
+            InitializeComponent();
+            MIidDeuda = d.IdDeuda;
+            lblChofer.Text = nombreChofer;
+            txtMonto.Text = d.Monto.ToString();
+            miid = d.IdChofer.ToString();
+            
+        }
         public frmPago()
         {
             InitializeComponent();
@@ -33,6 +42,8 @@ namespace Presentacion
 
         public string MINombre;
         public string miid;
+
+        public int MIidDeuda;
 
         public void HabilitarCriteriosDeBusqueda(bool nombre = false, bool mes = false, bool ano = false,bool dia = false, bool movil = false){
             txtBuscarNomA.Enabled = nombre;
@@ -57,7 +68,7 @@ namespace Presentacion
         private void Limpiar()
         {
             this.dtpFechaPago.Text = string.Empty;
-            this.btnSelChofer.Enabled = false;
+           
             this.txtMonto.Text = string.Empty;
 
         }
@@ -65,7 +76,7 @@ namespace Presentacion
         {
            
             dtpFechaPago.Enabled = value;
-            btnSelChofer.Enabled = value;
+           
             txtMonto.Enabled = value;
             btnGuardar.Enabled = value;
         }
@@ -85,7 +96,7 @@ namespace Presentacion
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             BloquearCampos(true);
-            btnSelChofer.Enabled = true;
+          
             btnNuevo.Enabled = false;
             
 
