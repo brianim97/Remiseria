@@ -17,13 +17,14 @@ namespace Presentacion
     {
         public frmPago()
         {
-
+            InitializeComponent();
         }
-        public frmPago(Entidades.Deuda d)
+        public frmPago(Entidades.Deuda d, string NombreApellido)
         {
             InitializeComponent();
+            miid = d.IdChofer.ToString();
             txtMonto.Text = Convert.ToString(d.Monto);
-            lblChofer.Text = d.IdChofer.ToString();
+            lblChofer.Text = NombreApellido;
         }
 
         public string IMidpago;
