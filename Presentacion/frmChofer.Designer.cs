@@ -133,7 +133,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1370, 517);
+            this.tabControl1.Size = new System.Drawing.Size(1284, 517);
             this.tabControl1.TabIndex = 44;
             // 
             // tabPage1
@@ -149,7 +149,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1362, 488);
+            this.tabPage1.Size = new System.Drawing.Size(1276, 488);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mantenimiento";
             // 
@@ -874,7 +874,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1362, 488);
+            this.tabPage2.Size = new System.Drawing.Size(1276, 488);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Registros";
             // 
@@ -945,7 +945,7 @@
             this.txtBuscarListado.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarListado.Location = new System.Drawing.Point(691, 21);
             this.txtBuscarListado.Name = "txtBuscarListado";
-            this.txtBuscarListado.Size = new System.Drawing.Size(214, 26);
+            this.txtBuscarListado.Size = new System.Drawing.Size(128, 26);
             this.txtBuscarListado.TabIndex = 7;
             this.txtBuscarListado.TextChanged += new System.EventHandler(this.txtBuscarListado_TextChanged);
             // 
@@ -961,7 +961,7 @@
             "Patente"});
             this.cbTipoBusqueda.Location = new System.Drawing.Point(464, 21);
             this.cbTipoBusqueda.Name = "cbTipoBusqueda";
-            this.cbTipoBusqueda.Size = new System.Drawing.Size(210, 27);
+            this.cbTipoBusqueda.Size = new System.Drawing.Size(124, 27);
             this.cbTipoBusqueda.TabIndex = 6;
             // 
             // dgbListado
@@ -975,7 +975,7 @@
             this.dgbListado.Location = new System.Drawing.Point(3, 60);
             this.dgbListado.Name = "dgbListado";
             this.dgbListado.ReadOnly = true;
-            this.dgbListado.Size = new System.Drawing.Size(1356, 425);
+            this.dgbListado.Size = new System.Drawing.Size(1270, 425);
             this.dgbListado.TabIndex = 5;
             this.dgbListado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbListado_CellClick);
             this.dgbListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbListado_CellContentClick);
@@ -1029,7 +1029,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1370, 517);
+            this.ClientSize = new System.Drawing.Size(1284, 517);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox5);

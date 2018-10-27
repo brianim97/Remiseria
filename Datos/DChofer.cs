@@ -299,11 +299,7 @@ namespace Datos
                 Console.WriteLine(ex.Message);
             }
         }
-        //String sql = "SELECT Chofer.NombreApellido,Chofer.Dni,Chofer.FechaNacimiento,Chofer.NroTelefono," +
-        //             "Chofer.Direccion,Chofer.EstadoCivil,Vehiculo.MarcaModelo,Vehiculo.Anio," +
-        //             "Vehiculo.Patente,Vehiculo.NroChasis,Vehiculo.NroMotor " +
-        //             "FROM Chofer INNER JOIN Vehiculo ON Chofer.Vehiculo = Vehiculo.idVehiculo " +
-        //             "WHERE Dni LIKE ?";
+        
 
 
     }
