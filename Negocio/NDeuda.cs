@@ -32,5 +32,10 @@ namespace Negocio
         {
             return new Datos.DDeuda().MostrarPorNombreApellido(nombreapellido);
         }
+
+        public static int VincularPago(int idPago, int mIidDeuda)
+        {
+           return new Datos.DDeuda().VincularPago(idPago,mIidDeuda);
+        }
     }
 }
