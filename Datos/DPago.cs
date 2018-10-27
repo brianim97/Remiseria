@@ -57,11 +57,10 @@ namespace Datos
         }
 
         //Insertar
-        public string Insertar(DPago Pago)
+        public int Insertar(DPago Pago)
         {
             //Conexion con = new Conexion();
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
-            string rpta = "";
             string sql = ("insert into Pago (Dia, Mes, Anio ,Hora, idChofer, Monto) " +
                 "values (?,?,?,?,?,?)");
             try
@@ -76,14 +75,17 @@ namespace Datos
                 cmd.Parameters.Add(new SQLiteParameter("idChofer", Pago.IdChofer));
                 cmd.Parameters.Add(new SQLiteParameter("Monto", Pago.Monto));
                 conector.Open();
-                rpta = cmd.ExecuteNonQuery() == 1 ? "OK" : "No se ingreso el registro";
+                cmd.ExecuteNonQuery();
+
+                SQLiteCommand cmd2 = new SQLiteCommand("SELECT last_insert_rowid() ", conector);
+                int id = Convert.ToInt32(cmd2.ExecuteScalar());
                 conector.Close();
-                return rpta;
+                return id;
 
             }
-            catch (SQLiteException ex)
+            catch(Exception)
             {
-                return rpta = ex.Message;
+                return -1;
             }
 
 

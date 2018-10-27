@@ -18,7 +18,6 @@ namespace Presentacion
         public frmPago()
         {
             InitializeComponent();
-
         }
 
         public string IMidpago;
@@ -112,7 +111,7 @@ namespace Presentacion
                 try
                 {
                     frmSeleccionarChofer frm = new frmSeleccionarChofer(this);
-                    NPago.Insertar(dtpFechaPago.Value.Day.ToString(), dtpFechaPago.Value.Month.ToString(),dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString(), Convert.ToInt32(miid), Convert.ToDouble(txtMonto.Text));
+                    int id = NPago.Insertar(dtpFechaPago.Value.Day.ToString(), dtpFechaPago.Value.Month.ToString(),dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString(), Convert.ToInt32(miid), Convert.ToDouble(txtMonto.Text));
                    // GuardarDatosImpresion(dtpFechaPago.Value.Day.ToString()+"/"+dtpFechaPago.Value.Month.ToString() + "/" + dtpFechaPago.Value.Year.ToString(), dtpFechaPago.Value.Hour.ToString() + ":" + dtpFechaPago.Value.Minute.ToString());
                     MessageBox.Show("Datos Ingresados Correctamente");
                     MostrarTodosLosPagos();

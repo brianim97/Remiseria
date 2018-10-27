@@ -18,7 +18,7 @@ namespace Negocio
         }
 
 
-        public static string Insertar(string dia, string mes, string anio, string hora, int idChofer, double monto)
+        public static int Insertar(string dia, string mes, string anio, string hora, int idChofer, double monto)
         {
             DPago obj = new DPago();
             obj.Dia = dia;
@@ -42,7 +42,8 @@ namespace Negocio
             obj.IdChofer = idChofer;
             obj.Monto = monto;
 
-            return obj.Insertar(obj);
+            //TODO revisar si va editar o va insertar
+            return obj.Editar(obj);
         }
         public static string Eliminar(int idpago)
         {
