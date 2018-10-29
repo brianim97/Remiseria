@@ -69,7 +69,7 @@ namespace Presentacion
         private void dgvSelChofer_DoubleClick(object sender, EventArgs e)
         {
             string idAA, idBB;
-            idAA = (this.dgvSelChofer.CurrentRow.Cells["ID"].Value).ToString();
+            idAA = (this.dgvSelChofer.CurrentRow.Cells["idChofer"].Value).ToString();
             idBB = (this.dgvSelChofer.CurrentRow.Cells["NombreApellido"].Value).ToString();
             
             frmPadre.RecuperarId(idAA, idBB);

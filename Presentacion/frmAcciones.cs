@@ -17,7 +17,7 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        public string miid;
+        public string miid = "-1";
         public string miNombre;
 
         public void RecuperarId(string id, string name)
@@ -35,7 +35,7 @@ namespace Presentacion
 
         private void CargarTicketDeuda(string valor, string mes, string ano)
         {
-            if (valor != string.Empty && mes != string.Empty && ano != string.Empty)
+            if (miid != "-1" && valor != string.Empty && mes != string.Empty && ano != string.Empty)
             {
                 bool[] SemanasSeleccionadas = new bool[] { chk1.Checked, chk2.Checked, chk3.Checked, chk4.Checked };
 
@@ -54,7 +54,7 @@ namespace Presentacion
 
                     deuda.Fecha = new DateTime(Convert.ToInt32(ano), Convert.ToInt32(mes), semana);
 
-                    if (new Negocio.NDeuda().Insertar(deuda)) ;
+                    if (new Negocio.NDeuda().Insertar(deuda))
                         nroModificaciones++;
                 }
 
@@ -63,6 +63,8 @@ namespace Presentacion
                 else
                     MessageBox.Show("No Hubo Modificaciones. Compruebe los Datos!");
             }
+            else
+                MessageBox.Show("Es Obligatorio Seleccionar un Chofer y Rellenar los campos: Valor de Base, Mes, Año, Semana!");
         }
 
         private void btnGenTickParticular_Click(object sender, EventArgs e)
@@ -122,7 +124,7 @@ namespace Presentacion
                 var deuda = new Entidades.Deuda();
                 for (int i = 0; i < cantFilas; i++)
                 {
-                    
+
                     deuda.IdChofer = (Convert.ToInt32(t.Rows[i]["idChofer"]));
                     deuda.IdPago = null;
                     deuda.Monto = Convert.ToDouble(txtValorDeBase.Text);
@@ -133,7 +135,7 @@ namespace Presentacion
                             continue;
                         int semana = j + 1;
                         deuda.Fecha = new DateTime(Convert.ToInt32(cbAno.Text), Convert.ToInt32(cbMes.Text), semana);
-                        if(new Negocio.NDeuda().Insertar(deuda))
+                        if (new Negocio.NDeuda().Insertar(deuda))
                             nroModificaciones++;
                     }
 
@@ -144,6 +146,8 @@ namespace Presentacion
                     MessageBox.Show("No Hubo Modificaciones. Compruebe los Datos!");
 
             }
+            else
+                MessageBox.Show("Debe Rellenar los campos: Valor de Base, Mes, Año, Semana!");
         }
     }
 }

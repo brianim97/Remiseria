@@ -39,20 +39,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvDeudores = new System.Windows.Forms.DataGridView();
             this.X = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbAnioFin = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbBuscarMesFin = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbAnioInicio = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbBuscarMesInicio = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeudores)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -76,7 +64,7 @@
             this.panel2.Controls.Add(this.cbTipoBusqueda);
             this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.txtBusqueda);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(149, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(187, 129);
             this.panel2.TabIndex = 26;
@@ -196,198 +184,6 @@
             this.X.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.X.Width = 20;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.cbAnioFin);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cbBuscarMesFin);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.cbAnioInicio);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.cbBuscarMesInicio);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(205, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(282, 80);
-            this.panel1.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 19);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Fin";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 19);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Inicio";
-            // 
-            // cbAnioFin
-            // 
-            this.cbAnioFin.BackColor = System.Drawing.Color.White;
-            this.cbAnioFin.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAnioFin.FormattingEnabled = true;
-            this.cbAnioFin.Items.AddRange(new object[] {
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030",
-            "2031",
-            "2032",
-            "2033",
-            "2034",
-            "2035",
-            "2036",
-            "2037",
-            "2038",
-            "2039",
-            "2040"});
-            this.cbAnioFin.Location = new System.Drawing.Point(199, 41);
-            this.cbAnioFin.Name = "cbAnioFin";
-            this.cbAnioFin.Size = new System.Drawing.Size(75, 27);
-            this.cbAnioFin.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 19);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Año";
-            // 
-            // cbBuscarMesFin
-            // 
-            this.cbBuscarMesFin.BackColor = System.Drawing.Color.White;
-            this.cbBuscarMesFin.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBuscarMesFin.FormattingEnabled = true;
-            this.cbBuscarMesFin.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cbBuscarMesFin.Location = new System.Drawing.Point(90, 41);
-            this.cbBuscarMesFin.Name = "cbBuscarMesFin";
-            this.cbBuscarMesFin.Size = new System.Drawing.Size(44, 27);
-            this.cbBuscarMesFin.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(57, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 19);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Mes";
-            // 
-            // cbAnioInicio
-            // 
-            this.cbAnioInicio.BackColor = System.Drawing.Color.White;
-            this.cbAnioInicio.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAnioInicio.FormattingEnabled = true;
-            this.cbAnioInicio.Items.AddRange(new object[] {
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030",
-            "2031",
-            "2032",
-            "2033",
-            "2034",
-            "2035",
-            "2036",
-            "2037",
-            "2038",
-            "2039",
-            "2040"});
-            this.cbAnioInicio.Location = new System.Drawing.Point(199, 8);
-            this.cbAnioInicio.Name = "cbAnioInicio";
-            this.cbAnioInicio.Size = new System.Drawing.Size(75, 27);
-            this.cbAnioInicio.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(166, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 19);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Año";
-            // 
-            // cbBuscarMesInicio
-            // 
-            this.cbBuscarMesInicio.BackColor = System.Drawing.Color.White;
-            this.cbBuscarMesInicio.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbBuscarMesInicio.FormattingEnabled = true;
-            this.cbBuscarMesInicio.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cbBuscarMesInicio.Location = new System.Drawing.Point(90, 8);
-            this.cbBuscarMesInicio.Name = "cbBuscarMesInicio";
-            this.cbBuscarMesInicio.Size = new System.Drawing.Size(44, 27);
-            this.cbBuscarMesInicio.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(57, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Mes";
-            // 
             // frmDeudores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,7 +191,6 @@
             this.BackColor = System.Drawing.Color.Firebrick;
             this.ClientSize = new System.Drawing.Size(492, 473);
             this.Controls.Add(this.btnCobrar);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblMontoTotal);
             this.Controls.Add(this.lblTotalRegistros);
@@ -408,8 +203,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeudores)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,17 +218,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvDeudores;
         private System.Windows.Forms.DataGridViewCheckBoxColumn X;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbAnioFin;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbBuscarMesFin;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbAnioInicio;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbBuscarMesInicio;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCobrar;
         private System.Windows.Forms.ComboBox cbTipoBusqueda;
     }

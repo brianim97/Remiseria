@@ -79,7 +79,8 @@ namespace Datos
 
             SQLiteConnection conector = new SQLiteConnection(Conexion.strConexion);
             conector.Open();
-            string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda, Chofer.idChofer  FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.Movil LIKE @movil AND Deuda.idPago IS NULL";
+            // string sql = @"SELECT Chofer.NombreApellido, Chofer.Movil, Deuda.Monto, Deuda.Fecha, Deuda.idDeuda, Chofer.idChofer  FROM Deuda INNER JOIN Chofer ON Deuda.idChofer = Chofer.idChofer WHERE Chofer.Movil LIKE @movil AND Deuda.idPago IS NULL AND Deuda.Fecha <= ";
+            string sql = @"select NombreApellido, Movil, fecha, Monto,idChofer,idDeuda from (select * from Deuda inner join Chofer on Deuda.idChofer = Chofer.idChofer where Chofer.EsActivo = 1 AND Deuda.idPago IS NULL AND Chofer.Movil LIKE @movil)";
             SQLiteCommand cmd = new SQLiteCommand(sql, conector);
             cmd.Parameters.Add(new SQLiteParameter("@movil","%"+ movil+ "%"));
             SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);

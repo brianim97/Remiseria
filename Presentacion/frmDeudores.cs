@@ -18,6 +18,7 @@ namespace Presentacion
             MostrarTablaCompleta();
             OcultarColumnaChk();
             DesabilitarBotonEliminar(true);
+            btnCobrar.Enabled = false;
         }
         int idDeuda;
         private void SumarColumnaMonto()
@@ -55,7 +56,7 @@ namespace Presentacion
         {
             if (cbTipoBusqueda.Text == "Movil")
             {
-                dgvDeudores.DataSource = new Negocio.NDeuda().MostrarPorMovil((txtBusqueda.Text));
+                dgvDeudores.DataSource = new Negocio.NDeuda().MostrarPorMovil(txtBusqueda.Text);
             }
             else if (cbTipoBusqueda.Text == "Nombre/Apellido")
             {
